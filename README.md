@@ -6,25 +6,24 @@ I build things across the stack — quantum algorithms, cross-platform apps, ML 
 
 ## 🔬 Research
 
-- **Quantum K-Means Clustering** — SWAP test & fidelity-based distance metrics on Qiskit. Published on [Zenodo](https://doi.org/10.5281/zenodo.18802706).
-- **MA-QAOA for Unit Commitment** — Mapping renewable microgrid scheduling to Ising Hamiltonians; benchmarked against Simulated Annealing. *(In progress)*
-- **Industrial Surface Defect Classification** — 17-model study (EfficientNet, ResNet-50, ViT, XGBoost, and more). Best: ResNet-50 GPU at 89.03%. *(In progress)*
+- **Quantum K-Means Clustering** — SWAP test & fidelity-based distance metrics on Qiskit. Published on [Zenodo](https://doi.org/10.5281/zenodo.18876209).
 
 ---
 
 ## 🛠️ Projects
 
 | Project | Stack | What it does |
-|---------|-------|-------------|
-| [StEAM (.NET MAUI)](https://github.com/verycareful/StEAM_cs) | C#, .NET 9, Supabase | Cross-platform student late-arrival tracker with NFC, OCR, and barcode scanning |
+|---------|-------|--------------|
+| [StEAM (.NET MAUI)](https://github.com/verycareful/StEAM_cs) | C#, .NET 9, Supabase | Cross-platform student late-arrival tracker with NFC (MIFARE Classic), OCR, and barcode scanning |
 | [StEAM (Android)](https://github.com/verycareful/StEAM) | Kotlin, Compose Multiplatform | Android version of the same system |
-| [Latecomers Web](https://github.com/verycareful/Latecomers) | React, TypeScript, Supabase | Web portal for the same attendance system |
+| [Latecomers Web](https://github.com/verycareful/Latecomers) | React, TypeScript, Supabase | Web portal for attendance — dashboard, filters, CSV export, admin panel |
 | [ODapp](https://github.com/verycareful/ODAPP) | .NET MAUI, Supabase | On-duty request management for educational institutions |
 | [OD Site](https://github.com/verycareful/ODSite) | Next.js, Supabase | Web version of OD management |
-| [ResearchSync](https://github.com/verycareful/ResearchSync) | .NET MAUI, SQLite | Unified workspace linking project management with research (citations, PDFs, snippets) |
+| [ResearchSync](https://github.com/verycareful/ResearchSync) | .NET MAUI, SQLite | Unified workspace linking project management with research (citations, PDFs, snippets) with OneDrive/Google Drive sync |
+| [NotBigBrother](https://github.com/Zonde246/NotBigBrother) | Node.js, RSA blind signatures | Double-blind age verification — proves you're an adult without revealing who you are |
+| [PGP Sentence Lab](https://github.com/verycareful/PGP) | Python, Flask | Pregroup grammar sentence parser with text and PNG diagram output |
 | [Sports Shop](https://github.com/verycareful/SportsShop) | React, Vite, Supabase | E-commerce bill generator with invoice generation |
-| [MapStrategyGame](https://github.com/verycareful/MapStrategyGame) | C#, .NET 9, Avalonia | Procedurally generated grand strategy game *(early dev)* |
-| [Task Management System](https://github.com/verycareful/TMS) | Java, Maven, FlatLaf | Desktop task manager with MySQL backend |
+| [Task Management System](https://github.com/verycareful/TMS) | Java, Maven, FlatLaf | Desktop task manager with MySQL backend *(learning project)* |
 
 ---
 
