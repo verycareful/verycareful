@@ -39,7 +39,7 @@ I build things across the stack — quantum algorithms, cross-platform apps, ML 
 
 ## 📫 Reach me
 
-- **Email** — [205175683+verycareful@users.noreply.github.com](mailto:205175683+verycareful@users.noreply.github.com)
+- **Email** — [Sricharan](sricharanatgithub@outlook.com)
 - **LinkedIn** — [verycareful](https://www.linkedin.com/in/verycareful)
 - **ORCiD** — [0009-0004-6873-5692](https://orcid.org/0009-0004-6873-5692)
 
