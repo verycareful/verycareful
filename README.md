@@ -68,4 +68,4 @@ Ising Hamiltonians, blind-signature protocols, NFC campus systems.
 [![Email](https://img.shields.io/badge/sricharans@proton.me-8B89CC?style=flat-square&logo=protonmail&logoColor=white)](mailto:sricharans@proton.me)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/verycareful)
 [![ORCiD](https://img.shields.io/badge/ORCiD-A6CE39?style=flat-square&logo=orcid&logoColor=white)](https://orcid.org/0009-0004-6873-5692)
-[![Portfolio](https://img.shields.io/badge/Portfolio-111111?style=flat-square&logo=githubpages&logoColor=white)](https://verycareful.github.io)
+[![Portfolio](https://img.shields.io/badge/Portfolio-111111?style=flat-square&logo=githubpages&logoColor=white)]([https://verycareful.github.io](https://verycareful.github.io/verycareful/))
