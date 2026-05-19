@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+/* ─── Theme tokens (exact from design prototype) ───────── */
+
+html[data-theme="paper"] {
+  --bg:          #EFEBE2;
+  --bg-2:        #E8E3D7;
+  --ink:         #0E1116;
+  --ink-2:       #2A2E36;
+  --ink-3:       #5A5F69;
+  --ink-4:       #8A8F99;
+  --rule:        rgba(14,17,22,0.14);
+  --rule-soft:   rgba(14,17,22,0.07);
+  --accent:      oklch(0.55 0.14 245);
+  --accent-soft: oklch(0.55 0.14 245 / 0.12);
+  --collapse:    oklch(0.62 0.18 30);
+  --paper-tint:  rgba(14,17,22,0.025);
+}
+html[data-theme="dark"] {
+  --bg:          #0A0D12;
+  --bg-2:        #0F141B;
+  --ink:         #E8E6DE;
+  --ink-2:       #C5C2B8;
+  --ink-3:       #8A8F99;
+  --ink-4:       #5A5F69;
+  --rule:        rgba(232,230,222,0.14);
+  --rule-soft:   rgba(232,230,222,0.06);
+  --accent:      oklch(0.72 0.16 230);
+  --accent-soft: oklch(0.72 0.16 230 / 0.16);
+  --collapse:    oklch(0.72 0.18 35);
+  --paper-tint:  rgba(232,230,222,0.02);
+}
+
+/* ─── Type pairing (data-type="mono" is fixed default) ─── */
+html[data-type="mono"] {
+  --font-display: "IBM Plex Mono", ui-monospace, monospace;
+  --font-body:    "Inter Tight", system-ui, sans-serif;
+  --font-mono:    "IBM Plex Mono", ui-monospace, monospace;
+  --font-italic:  "Newsreader", Georgia, serif;
+}
+
+/* ─── Density (data-density="airy" is fixed default) ───── */
+html[data-density="airy"]    { --pad-section: 8rem;  --pad-block: 3rem; }
+html[data-density="compact"] { --pad-section: 4rem;  --pad-block: 1.75rem; }
+
+/* ─── Base ────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-feature-settings: "ss01", "cv11", "kern";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body { overflow-x: hidden; }
+
+a { color: inherit; text-decoration: none; }
+
+/* ─── Paper grain ─────────────────────────────────────── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+html[data-theme="dark"] body::before { mix-blend-mode: screen; opacity: 0.03; }
+
+/* ─── Selection ───────────────────────────────────────── */
+::selection { background: var(--accent); color: var(--bg); }
+
+/* ─── Scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar       { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-3); }
+
+/* ─── Typography tokens ───────────────────────────────── */
+.mono         { font-family: var(--font-mono); font-feature-settings: "ss01","cv11"; }
+.display      { font-family: var(--font-display); }
+.italic-serif { font-family: var(--font-italic); font-style: italic; }
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-weight: 500;
+}
+
+.eqno {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--ink-4);
+  letter-spacing: 0.04em;
+}
+
+/* ─── Hairline rules ──────────────────────────────────── */
+.rule        { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+.rule-soft   { border: 0; border-top: 1px solid var(--rule-soft); margin: 0; }
+.rule-double {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  height: 4px;
+}
+
+/* ─── Page frame ──────────────────────────────────────── */
+.frame { max-width: 1320px; margin: 0 auto; padding: 0 32px; position: relative; }
+@media (max-width: 720px) { .frame { padding: 0 20px; } }
+
+/* ─── Section marker ──────────────────────────────────── */
+.section-marker {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 56px;
+}
+.section-marker .roman {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--ink);
+  font-weight: 600;
+}
+.section-marker .title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--ink);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.section-marker .meta {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--ink-3);
+  letter-spacing: 0.06em;
+}
+
+/* ─── Ghost link ──────────────────────────────────────── */
+.ghost-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1px;
+  transition: border-color 0.2s, color 0.2s;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink-2);
+}
+.ghost-link:hover { border-color: var(--accent); color: var(--accent); }
+.ghost-link .arr  { transition: transform 0.2s; display: inline-block; }
+.ghost-link:hover .arr { transform: translateX(2px); }
+
+/* ─── Drop cap ────────────────────────────────────────── */
+.dropcap::first-letter {
+  font-family: var(--font-display);
+  font-weight: 800;
+  float: left;
+  font-size: 4.6em;
+  line-height: 0.85;
+  margin: 0.04em 0.08em 0 0;
+  color: var(--ink);
+}
+
+/* ─── Measurement tooltip ─────────────────────────────── */
+.measure-tip {
+  position: fixed;
+  pointer-events: none;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 4px 8px;
+  z-index: 50;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  transform: translate(-50%, -130%);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.measure-tip.show { opacity: 1; }
+
+/* ─── Focus visible ───────────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ─── Reduced motion ──────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Print ───────────────────────────────────────────── */
+@media print { body::before { display: none; } }
