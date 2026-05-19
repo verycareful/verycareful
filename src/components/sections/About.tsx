@@ -1,6 +1,103 @@
 "use client";
 
 import { ABOUT } from "@/lib/data";
+import { useEffect, useState } from "react";
+
+type LangMap = Record<string, number>;
+
+const LANG_COLORS: Record<string, string> = {
+  "C++":        "#f34b7d",
+  "C":          "#555555",
+  "Python":     "#3572A5",
+  "TypeScript": "#3178c6",
+  "JavaScript": "#f1e05a",
+  "Kotlin":     "#A97BFF",
+  "C#":         "#239120",
+  "Java":       "#b07219",
+  "HTML":       "#e34c26",
+  "CSS":        "#563d7c",
+  "CMake":      "#DA3434",
+  "Shell":      "#89e051",
+};
+
+function useLangStats(username: string) {
+  const [langs, setLangs] = useState<LangMap | null>(null);
+
+  useEffect(() => {
+    const KEY = "gh_lang_stats_v1";
+    const cached = sessionStorage.getItem(KEY);
+    if (cached) { setLangs(JSON.parse(cached)); return; }
+
+    (async () => {
+      try {
+        const repos: { name: string; fork: boolean }[] = await fetch(
+          `https://api.github.com/users/${username}/repos?per_page=100`
+        ).then(r => r.json());
+
+        const totals: LangMap = {};
+        await Promise.all(
+          repos.filter(r => !r.fork).map(async repo => {
+            try {
+              const l: LangMap = await fetch(
+                `https://api.github.com/repos/${username}/${repo.name}/languages`
+              ).then(r => r.json());
+              for (const [lang, bytes] of Object.entries(l))
+                totals[lang] = (totals[lang] || 0) + (bytes as number);
+            } catch {}
+          })
+        );
+
+        sessionStorage.setItem(KEY, JSON.stringify(totals));
+        setLangs(totals);
+      } catch {}
+    })();
+  }, [username]);
+
+  return langs;
+}
+
+function LangBar({ username }: { username: string }) {
+  const raw = useLangStats(username);
+
+  if (!raw) return (
+    <div className="mono" style={{ fontSize: 10.5, color: "var(--ink-4)", letterSpacing: "0.08em" }}>
+      loading language stats…
+    </div>
+  );
+
+  const total = Object.values(raw).reduce((a, b) => a + b, 0);
+  const sorted = Object.entries(raw)
+    .map(([lang, bytes]) => ({ lang, pct: (bytes / total) * 100 }))
+    .sort((a, b) => b.pct - a.pct)
+    .slice(0, 8);
+
+  return (
+    <div>
+      {/* stacked bar */}
+      <div style={{ display: "flex", height: 6, width: "100%", gap: 1, marginBottom: 14, overflow: "hidden" }}>
+        {sorted.map(({ lang, pct }) => (
+          <div
+            key={lang}
+            style={{
+              width: `${pct}%`,
+              background: LANG_COLORS[lang] ?? "var(--ink-3)",
+              flexShrink: 0,
+            }}
+          />
+        ))}
+      </div>
+      {/* legend */}
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "8px 18px" }}>
+        {sorted.map(({ lang, pct }) => (
+          <span key={lang} className="mono" style={{ fontSize: 10.5, color: "var(--ink-3)", display: "flex", alignItems: "center", gap: 5 }}>
+            <span style={{ width: 7, height: 7, background: LANG_COLORS[lang] ?? "var(--ink-3)", display: "inline-block", flexShrink: 0 }} />
+            {lang} <span style={{ color: "var(--ink-4)" }}>{pct.toFixed(1)}%</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function About() {
   const A = ABOUT;
@@ -133,6 +230,11 @@ export default function About() {
                   <span className="mono" style={{ fontSize: 11, color: "var(--ink-3)" }}>{o.p}</span>
                 </div>
               ))}
+            </div>
+            {/* Language stats */}
+            <div style={{ marginTop: 36 }}>
+              <div className="label" style={{ marginBottom: 14 }}>↳ LANGUAGES · by lines across public repos</div>
+              <LangBar username="verycareful" />
             </div>
           </div>
         </div>

@@ -7,17 +7,8 @@
 Building at the boundary of quantum theory and shipped software —
 Ising Hamiltonians, blind-signature protocols, NFC campus systems.
 
-<br/>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=verycareful&show_icons=true&theme=dark&hide_border=true&count_private=true&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e&icon_color=6e7681" />
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=verycareful&show_icons=true&theme=default&hide_border=true&count_private=true" />
-</picture>
-&nbsp;
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=verycareful&layout=compact&theme=dark&hide_border=true&langs_count=8&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e" />
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=verycareful&layout=compact&theme=default&hide_border=true&langs_count=8" />
-</picture>
+![followers](https://img.shields.io/github/followers/verycareful?style=flat-square&color=858585&labelColor=1a1a1a&label=followers)
+![stars](https://img.shields.io/github/stars/verycareful?style=flat-square&color=858585&labelColor=1a1a1a&label=total%20stars)
 
 </div>
 
@@ -69,6 +60,15 @@ Ising Hamiltonians, blind-signature protocols, NFC campus systems.
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
+
+---
+
+## Languages
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=verycareful&layout=compact&hide_border=true&langs_count=10&theme=dark&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e&card_width=600&cache_seconds=86400" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=verycareful&layout=compact&hide_border=true&langs_count=10&theme=default&card_width=600&cache_seconds=86400" alt="Top Languages" />
+</picture>
 
 ---
 
