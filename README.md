@@ -63,15 +63,6 @@ Ising Hamiltonians, blind-signature protocols, NFC campus systems.
 
 ---
 
-## Languages
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=verycareful&layout=compact&hide_border=true&langs_count=10&theme=dark&bg_color=0d1117&title_color=c9d1d9&text_color=8b949e&card_width=600&cache_seconds=86400" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=verycareful&layout=compact&hide_border=true&langs_count=10&theme=default&card_width=600&cache_seconds=86400" alt="Top Languages" />
-</picture>
-
----
-
 ## Contact
 
 [![Email](https://img.shields.io/badge/sricharans@proton.me-8B89CC?style=flat-square&logo=protonmail&logoColor=white)](mailto:sricharans@proton.me)
