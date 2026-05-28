@@ -3,7 +3,7 @@
 
 import json, os, sys, time
 from collections import defaultdict
-from datetime import datetime, timedelta
+from datetime import datetime
 import urllib.request, urllib.error
 
 USERNAME = "verycareful"
@@ -34,6 +34,33 @@ def gh(url, retries=3):
                 time.sleep(4)
                 continue
             if e.code == 404:
+                return None
+            print(f"  HTTP {e.code}: {url}", file=sys.stderr)
+            return None
+        except Exception as e:
+            print(f"  Error: {e}", file=sys.stderr)
+            return None
+    return None
+
+def gh_stats(url):
+    """Fetch a stats endpoint that may return 202 while GitHub computes it."""
+    for attempt in range(8):
+        try:
+            req = urllib.request.Request(url, headers=_headers())
+            with urllib.request.urlopen(req, timeout=20) as r:
+                if r.status == 202:
+                    wait = 6 if attempt < 3 else 10
+                    print(f"  202 (computing), waiting {wait}s... [{url.split('/')[-2]}]")
+                    time.sleep(wait)
+                    continue
+                return json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            if e.code == 202:
+                wait = 6 if attempt < 3 else 10
+                print(f"  202 (computing), waiting {wait}s... [{url.split('/')[-2]}]")
+                time.sleep(wait)
+                continue
+            if e.code in (404, 409):
                 return None
             print(f"  HTTP {e.code}: {url}", file=sys.stderr)
             return None
@@ -141,7 +168,7 @@ def gen_activity(repos):
     cutoff_key = month_list(25)[0][0]
 
     for repo in active:
-        data = gh(f"https://api.github.com/repos/{USERNAME}/{repo['name']}/stats/commit_activity")
+        data = gh_stats(f"https://api.github.com/repos/{USERNAME}/{repo['name']}/stats/commit_activity")
         if not data or not isinstance(data, list):
             continue
         for week in data:

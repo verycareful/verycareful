@@ -43,3 +43,5 @@ next-env.d.ts
 .claude
 local/
 changes_version.md
+logs_extracted/
+*.zip
