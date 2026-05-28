@@ -3,7 +3,7 @@
 
 import json, os, sys, time
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timezone
 import urllib.request, urllib.error
 
 USERNAME = "verycareful"
@@ -23,56 +23,23 @@ def _headers():
         h["Authorization"] = f"Bearer {TOKEN}"
     return h
 
-def gh(url, retries=3):
-    for attempt in range(retries):
-        try:
-            req = urllib.request.Request(url, headers=_headers())
-            with urllib.request.urlopen(req, timeout=20) as r:
-                return json.loads(r.read())
-        except urllib.error.HTTPError as e:
-            if e.code == 202:
-                time.sleep(4)
-                continue
-            if e.code == 404:
-                return None
+def gh(url):
+    try:
+        req = urllib.request.Request(url, headers=_headers())
+        with urllib.request.urlopen(req, timeout=20) as r:
+            return json.loads(r.read()), dict(r.headers)
+    except urllib.error.HTTPError as e:
+        if e.code not in (404, 409, 422):
             print(f"  HTTP {e.code}: {url}", file=sys.stderr)
-            return None
-        except Exception as e:
-            print(f"  Error: {e}", file=sys.stderr)
-            return None
-    return None
-
-def gh_stats(url):
-    """Fetch a stats endpoint that may return 202 while GitHub computes it."""
-    for attempt in range(8):
-        try:
-            req = urllib.request.Request(url, headers=_headers())
-            with urllib.request.urlopen(req, timeout=20) as r:
-                if r.status == 202:
-                    wait = 6 if attempt < 3 else 10
-                    print(f"  202 (computing), waiting {wait}s... [{url.split('/')[-2]}]")
-                    time.sleep(wait)
-                    continue
-                return json.loads(r.read())
-        except urllib.error.HTTPError as e:
-            if e.code == 202:
-                wait = 6 if attempt < 3 else 10
-                print(f"  202 (computing), waiting {wait}s... [{url.split('/')[-2]}]")
-                time.sleep(wait)
-                continue
-            if e.code in (404, 409):
-                return None
-            print(f"  HTTP {e.code}: {url}", file=sys.stderr)
-            return None
-        except Exception as e:
-            print(f"  Error: {e}", file=sys.stderr)
-            return None
-    return None
+        return None, {}
+    except Exception as e:
+        print(f"  Error: {e}", file=sys.stderr)
+        return None, {}
 
 def get_repos():
     repos, page = [], 1
     while True:
-        data = gh(f"https://api.github.com/users/{USERNAME}/repos?per_page=100&page={page}&type=owner")
+        data, _ = gh(f"https://api.github.com/users/{USERNAME}/repos?per_page=100&page={page}&type=owner")
         if not data:
             break
         repos.extend(data)
@@ -116,7 +83,7 @@ SVG_STYLE = """<style>
 def gen_languages(repos):
     totals = defaultdict(int)
     for repo in repos:
-        data = gh(f"https://api.github.com/repos/{USERNAME}/{repo['name']}/languages")
+        data, _ = gh(f"https://api.github.com/repos/{USERNAME}/{repo['name']}/languages")
         if data:
             for lang, b in data.items():
                 totals[lang] += b
@@ -131,7 +98,6 @@ def gen_languages(repos):
     W, ROW = 760, 34
     PX, PY = 24, 16
     H = PY * 2 + 32 + len(langs) * ROW
-
     LABEL_W, DOT, PCT_W = 108, 12, 50
     BAR_X = PX + DOT + LABEL_W
     BAR_W = W - BAR_X - PX - PCT_W - 8
@@ -143,7 +109,6 @@ def gen_languages(repos):
         f'<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="6" class="bd" stroke-width="1"/>',
         f'<text x="{PX}" y="{PY+12}" class="ttl">↳ LANGUAGES · bytes across public repos</text>',
     ]
-
     for i, (lang, b) in enumerate(langs):
         pct = b / grand * 100
         color = LANG_COLORS.get(lang, "#888888")
@@ -156,34 +121,48 @@ def gen_languages(repos):
             f'<rect x="{BAR_X}" y="{y+2}" width="{bw}" height="9" rx="2" fill="{color}" opacity="0.9"/>',
             f'<text x="{BAR_X+BAR_W+6}" y="{y+13}" class="val">{pct:.1f}%</text>',
         ]
-
     lines.append('</svg>')
     return '\n'.join(lines)
 
 
+def get_commit_months(repo_name, since_iso):
+    """Return {YYYY-MM: count} for a repo using the synchronous commits endpoint."""
+    monthly = defaultdict(int)
+    page = 1
+    while True:
+        url = (
+            f"https://api.github.com/repos/{USERNAME}/{repo_name}/commits"
+            f"?author={USERNAME}&since={since_iso}&per_page=100&page={page}"
+        )
+        data, headers = gh(url)
+        if not data or not isinstance(data, list):
+            break
+        for commit in data:
+            date_str = (
+                (commit.get("commit") or {})
+                .get("author") or {}
+            ).get("date", "")
+            if date_str:
+                monthly[date_str[:7]] += 1
+        if len(data) < 100:
+            break
+        page += 1
+        time.sleep(0.05)
+    return monthly
+
+
 def gen_activity(repos):
-    active = sorted(repos, key=lambda r: r.get("pushed_at", ""), reverse=True)[:15]
+    months = month_list(24)
+    # since = first day of oldest month
+    since_iso = months[0][0] + "-01T00:00:00Z"
 
     monthly = defaultdict(int)
-    cutoff_key = month_list(25)[0][0]
+    for repo in repos:
+        repo_counts = get_commit_months(repo["name"], since_iso)
+        for k, v in repo_counts.items():
+            monthly[k] += v
+        time.sleep(0.05)
 
-    for repo in active:
-        data = gh_stats(f"https://api.github.com/repos/{USERNAME}/{repo['name']}/stats/commit_activity")
-        if not data or not isinstance(data, list):
-            continue
-        for week in data:
-            ts = week.get("week", 0)
-            count = week.get("total", 0)
-            if not count:
-                continue
-            dt = datetime.fromtimestamp(ts)
-            key = f"{dt.year:04d}-{dt.month:02d}"
-            if key < cutoff_key:
-                continue
-            monthly[key] += count
-        time.sleep(0.1)
-
-    months = month_list(24)
     counts = [monthly.get(k, 0) for k, _ in months]
     if sum(counts) == 0:
         return None
@@ -216,7 +195,6 @@ def gen_activity(repos):
         f'<text x="{W-PX}" y="{CHART_Y+10}" class="val" font-size="9" text-anchor="end">{total} commits total</text>',
         f'<line x1="{PX}" y1="{BOTTOM}" x2="{W-PX}" y2="{BOTTOM}" class="ax" stroke-width="0.5"/>',
     ]
-
     for i, (count, (_, label)) in enumerate(zip(counts, months)):
         x = PX + i * slot_w
         bh = (count / max_c) * CHART_H
@@ -228,14 +206,12 @@ def gen_activity(repos):
             lines.append(
                 f'<text x="{x+slot_w/2:.1f}" y="{BOTTOM+14}" class="lbl" font-size="8.5" text-anchor="middle">{label}</text>'
             )
-
     pts = []
     for i, cum in enumerate(cumulative):
         x = PX + i * slot_w + slot_w / 2
         y = BOTTOM - (cum / max_cum) * CHART_H
         pts.append(f"{x:.1f},{y:.1f}")
     lines.append(f'<polyline points="{" ".join(pts)}" class="cum"/>')
-
     lines.append('</svg>')
     return '\n'.join(lines)
 
@@ -257,7 +233,7 @@ if __name__ == "__main__":
     if svg:
         write("assets/top-languages.svg", svg)
 
-    print("fetching commit activity (top 15 repos)...")
+    print("fetching commit activity...")
     svg = gen_activity(repos)
     if svg:
         write("assets/activity.svg", svg)
