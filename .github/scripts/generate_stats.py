@@ -53,16 +53,25 @@ def gql(query, variables):
         return None
 
 def get_repos():
+    include_private = os.environ.get("INCLUDE_PRIVATE") == "1"
     repos, page = [], 1
     while True:
-        data, _ = gh(f"https://api.github.com/users/{USERNAME}/repos?per_page=100&page={page}&type=owner")
+        if include_private:
+            url = f"https://api.github.com/user/repos?per_page=100&page={page}&affiliation=owner&visibility=all"
+        else:
+            url = f"https://api.github.com/users/{USERNAME}/repos?per_page=100&page={page}&type=owner"
+        data, _ = gh(url)
         if not data:
             break
         repos.extend(data)
         if len(data) < 100:
             break
         page += 1
-    return [r for r in repos if not r.get("fork")]
+    return [
+        r for r in repos
+        if not r.get("fork")
+        and (r.get("owner") or {}).get("login") == USERNAME
+    ]
 
 def month_list(n=24):
     result = []
@@ -123,7 +132,7 @@ def gen_languages(repos):
         SVG_STYLE,
         f'<rect width="{W}" height="{H}" rx="6" class="bg"/>',
         f'<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="6" class="bd" stroke-width="1"/>',
-        f'<text x="{PX}" y="{PY+12}" class="ttl">↳ LANGUAGES · bytes across public repos</text>',
+        f'<text x="{PX}" y="{PY+12}" class="ttl">↳ LANGUAGES · bytes across all repos</text>',
     ]
     for i, (lang, b) in enumerate(langs):
         pct = b / grand * 100
