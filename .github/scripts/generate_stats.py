@@ -105,7 +105,7 @@ SVG_STYLE = """<style>
 </style>"""
 
 
-def gen_languages(repos):
+def compute_language_totals(repos):
     totals = defaultdict(int)
     for repo in repos:
         data, _ = gh(f"https://api.github.com/repos/{USERNAME}/{repo['name']}/languages")
@@ -113,7 +113,25 @@ def gen_languages(repos):
             for lang, b in data.items():
                 totals[lang] += b
         time.sleep(0.05)
+    return totals
 
+
+def write_languages_json(totals):
+    if not totals:
+        return
+    grand = sum(totals.values())
+    payload = {
+        "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "totalBytes": grand,
+        "languages": [
+            {"name": lang, "bytes": b, "pct": round(b / grand * 100, 2)}
+            for lang, b in sorted(totals.items(), key=lambda x: x[1], reverse=True)
+        ],
+    }
+    write("public/stats/languages.json", json.dumps(payload, indent=2))
+
+
+def gen_languages(totals):
     if not totals:
         return None
 
@@ -261,9 +279,11 @@ if __name__ == "__main__":
     print(f"  {len(repos)} non-fork repos")
 
     print("fetching language data...")
-    svg = gen_languages(repos)
+    totals = compute_language_totals(repos)
+    svg = gen_languages(totals)
     if svg:
         write("assets/top-languages.svg", svg)
+    write_languages_json(totals)
 
     print("fetching commit activity...")
     svg = gen_activity()

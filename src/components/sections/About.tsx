@@ -24,11 +24,24 @@ function useLangStats(username: string) {
   const [langs, setLangs] = useState<LangMap | null>(null);
 
   useEffect(() => {
-    const KEY = "gh_lang_stats_v1";
+    const KEY = "gh_lang_stats_v2";
     const cached = sessionStorage.getItem(KEY);
     if (cached) { setLangs(JSON.parse(cached)); return; }
 
     (async () => {
+      const BASE = process.env.NODE_ENV === "production" ? "/verycareful" : "";
+      try {
+        const r = await fetch(`${BASE}/stats/languages.json`, { cache: "no-store" });
+        if (r.ok) {
+          const data: { languages: { name: string; bytes: number }[] } = await r.json();
+          const map: LangMap = {};
+          for (const l of data.languages) map[l.name] = l.bytes;
+          sessionStorage.setItem(KEY, JSON.stringify(map));
+          setLangs(map);
+          return;
+        }
+      } catch {}
+
       try {
         const repos: { name: string; fork: boolean }[] = await fetch(
           `https://api.github.com/users/${username}/repos?per_page=100`
@@ -233,7 +246,7 @@ export default function About() {
             </div>
             {/* Language stats */}
             <div style={{ marginTop: 36 }}>
-              <div className="label" style={{ marginBottom: 14 }}>↳ LANGUAGES · by lines across public repos</div>
+              <div className="label" style={{ marginBottom: 14 }}>↳ LANGUAGES · by lines across all repos</div>
               <LangBar username="verycareful" />
             </div>
           </div>
