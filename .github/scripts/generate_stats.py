@@ -3,7 +3,7 @@
 
 import json, os, sys, time
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 import urllib.request, urllib.error
 
 USERNAME = "verycareful"
@@ -35,6 +35,22 @@ def gh(url):
     except Exception as e:
         print(f"  Error: {e}", file=sys.stderr)
         return None, {}
+
+
+def gql(query, variables):
+    body = json.dumps({"query": query, "variables": variables}).encode()
+    headers = {**_headers(), "Content-Type": "application/json"}
+    req = urllib.request.Request("https://api.github.com/graphql", data=body, headers=headers, method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=20) as r:
+            data = json.loads(r.read())
+            if data.get("errors"):
+                print(f"  GraphQL errors: {data['errors']}", file=sys.stderr)
+                return None
+            return data.get("data")
+    except Exception as e:
+        print(f"  GraphQL error: {e}", file=sys.stderr)
+        return None
 
 def get_repos():
     repos, page = [], 1
@@ -125,44 +141,51 @@ def gen_languages(repos):
     return '\n'.join(lines)
 
 
-def get_commit_months(repo_name, since_iso):
-    """Return {YYYY-MM: count} for a repo using the synchronous commits endpoint."""
+def fetch_contributions(months_back=24):
+    """Aggregate {YYYY-MM: count} from GitHub's contribution calendar (GraphQL)."""
+    query = """
+    query($login:String!, $from:DateTime!, $to:DateTime!) {
+      user(login:$login) {
+        contributionsCollection(from:$from, to:$to) {
+          contributionCalendar {
+            weeks { contributionDays { date contributionCount } }
+          }
+        }
+      }
+    }"""
+    now = datetime.now(timezone.utc)
+    sm, sy = now.month - (months_back - 1), now.year
+    while sm <= 0:
+        sm += 12
+        sy -= 1
+    start = datetime(sy, sm, 1, tzinfo=timezone.utc)
+
     monthly = defaultdict(int)
-    page = 1
-    while True:
-        url = (
-            f"https://api.github.com/repos/{USERNAME}/{repo_name}/commits"
-            f"?author={USERNAME}&since={since_iso}&per_page=100&page={page}"
+    cursor = start
+    while cursor < now:
+        # GitHub caps each contributionsCollection window at 1 year.
+        slice_end = min(
+            cursor.replace(year=cursor.year + 1) - timedelta(seconds=1),
+            now,
         )
-        data, headers = gh(url)
-        if not data or not isinstance(data, list):
-            break
-        for commit in data:
-            date_str = (
-                (commit.get("commit") or {})
-                .get("author") or {}
-            ).get("date", "")
-            if date_str:
-                monthly[date_str[:7]] += 1
-        if len(data) < 100:
-            break
-        page += 1
-        time.sleep(0.05)
+        data = gql(query, {
+            "login": USERNAME,
+            "from": cursor.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "to":   slice_end.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        })
+        if data and data.get("user"):
+            weeks = data["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
+            for week in weeks:
+                for day in week["contributionDays"]:
+                    if day["contributionCount"]:
+                        monthly[day["date"][:7]] += day["contributionCount"]
+        cursor = slice_end + timedelta(seconds=1)
     return monthly
 
 
-def gen_activity(repos):
+def gen_activity():
     months = month_list(24)
-    # since = first day of oldest month
-    since_iso = months[0][0] + "-01T00:00:00Z"
-
-    monthly = defaultdict(int)
-    for repo in repos:
-        repo_counts = get_commit_months(repo["name"], since_iso)
-        for k, v in repo_counts.items():
-            monthly[k] += v
-        time.sleep(0.05)
-
+    monthly = fetch_contributions(24)
     counts = [monthly.get(k, 0) for k, _ in months]
     if sum(counts) == 0:
         return None
@@ -191,8 +214,8 @@ def gen_activity(repos):
         '@media(prefers-color-scheme:dark){.cum{stroke:#388bfd;}}</style>',
         f'<rect width="{W}" height="{H}" rx="6" class="bg"/>',
         f'<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="6" class="bd" stroke-width="1"/>',
-        f'<text x="{PX}" y="{PY+12}" class="ttl">↳ COMMIT ACTIVITY · public repos, last 24 months</text>',
-        f'<text x="{W-PX}" y="{CHART_Y+10}" class="val" font-size="9" text-anchor="end">{total} commits total</text>',
+        f'<text x="{PX}" y="{PY+12}" class="ttl">↳ COMMIT ACTIVITY · last 24 months</text>',
+        f'<text x="{W-PX}" y="{CHART_Y+10}" class="val" font-size="9" text-anchor="end">{total} contributions total</text>',
         f'<line x1="{PX}" y1="{BOTTOM}" x2="{W-PX}" y2="{BOTTOM}" class="ax" stroke-width="0.5"/>',
     ]
     for i, (count, (_, label)) in enumerate(zip(counts, months)):
@@ -234,7 +257,7 @@ if __name__ == "__main__":
         write("assets/top-languages.svg", svg)
 
     print("fetching commit activity...")
-    svg = gen_activity(repos)
+    svg = gen_activity()
     if svg:
         write("assets/activity.svg", svg)
 
