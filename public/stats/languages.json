@@ -1,0 +1,61 @@
+{
+  "updated": "2026-05-29T02:09:43Z",
+  "totalBytes": 4375923,
+  "languages": [
+    {
+      "name": "C++",
+      "bytes": 2030736,
+      "pct": 46.41
+    },
+    {
+      "name": "C#",
+      "bytes": 975122,
+      "pct": 22.28
+    },
+    {
+      "name": "TypeScript",
+      "bytes": 700892,
+      "pct": 16.02
+    },
+    {
+      "name": "Python",
+      "bytes": 355271,
+      "pct": 8.12
+    },
+    {
+      "name": "CSS",
+      "bytes": 88044,
+      "pct": 2.01
+    },
+    {
+      "name": "Jupyter Notebook",
+      "bytes": 78032,
+      "pct": 1.78
+    },
+    {
+      "name": "JavaScript",
+      "bytes": 73091,
+      "pct": 1.67
+    },
+    {
+      "name": "PLpgSQL",
+      "bytes": 33755,
+      "pct": 0.77
+    },
+    {
+      "name": "CMake",
+      "bytes": 17303,
+      "pct": 0.4
+    },
+    {
+      "name": "Java",
+      "bytes": 12837,
+      "pct": 0.29
+    },
+    {
+      "name": "HTML",
+      "bytes": 10840,
+      "pct": 0.25
+    }
+  ]
+}

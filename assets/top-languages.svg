@@ -28,7 +28,7 @@
 <rect x="24" y="86" width="7" height="7" fill="#178600"/>
 <text x="36" y="95" class="lbl">C#</text>
 <rect x="144" y="84" width="534" height="9" rx="2" class="bg2"/>
-<rect x="144" y="84" width="119" height="9" rx="2" fill="#178600" opacity="0.9"/>
+<rect x="144" y="84" width="118" height="9" rx="2" fill="#178600" opacity="0.9"/>
 <text x="684" y="95" class="val">22.3%</text>
 <rect x="24" y="120" width="7" height="7" fill="#3178c6"/>
 <text x="36" y="129" class="lbl">TypeScript</text>
