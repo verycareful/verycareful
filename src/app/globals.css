@@ -3,32 +3,38 @@
 /* ─── Theme tokens (exact from design prototype) ───────── */
 
 html[data-theme="paper"] {
-  --bg:          #EFEBE2;
-  --bg-2:        #E8E3D7;
-  --ink:         #0E1116;
-  --ink-2:       #2A2E36;
-  --ink-3:       #5A5F69;
-  --ink-4:       #8A8F99;
-  --rule:        rgba(14,17,22,0.14);
-  --rule-soft:   rgba(14,17,22,0.07);
-  --accent:      oklch(0.55 0.14 245);
-  --accent-soft: oklch(0.55 0.14 245 / 0.12);
-  --collapse:    oklch(0.62 0.18 30);
-  --paper-tint:  rgba(14,17,22,0.025);
+  --bg:               #EFEBE2;
+  --bg-2:             #E8E3D7;
+  --ink:              #0E1116;
+  --ink-2:            #2A2E36;
+  --ink-3:            #5A5F69;
+  --ink-4:            #8A8F99;
+  --rule:             rgba(14,17,22,0.14);
+  --rule-soft:        rgba(14,17,22,0.07);
+  --accent:           oklch(0.55 0.14 245);
+  --accent-soft:      oklch(0.55 0.14 245 / 0.12);
+  --collapse:         oklch(0.62 0.18 30);
+  --paper-tint:       rgba(14,17,22,0.025);
+  --glass:            rgba(239,235,226,0.82);
+  --accent-rgb-src:   #2566B0;
+  --collapse-rgb-src: #C2553A;
 }
 html[data-theme="dark"] {
-  --bg:          #0A0D12;
-  --bg-2:        #0F141B;
-  --ink:         #E8E6DE;
-  --ink-2:       #C5C2B8;
-  --ink-3:       #8A8F99;
-  --ink-4:       #5A5F69;
-  --rule:        rgba(232,230,222,0.14);
-  --rule-soft:   rgba(232,230,222,0.06);
-  --accent:      oklch(0.72 0.16 230);
-  --accent-soft: oklch(0.72 0.16 230 / 0.16);
-  --collapse:    oklch(0.72 0.18 35);
-  --paper-tint:  rgba(232,230,222,0.02);
+  --bg:               #0A0D12;
+  --bg-2:             #0F141B;
+  --ink:              #E8E6DE;
+  --ink-2:            #C5C2B8;
+  --ink-3:            #8A8F99;
+  --ink-4:            #5A5F69;
+  --rule:             rgba(232,230,222,0.14);
+  --rule-soft:        rgba(232,230,222,0.06);
+  --accent:           oklch(0.72 0.16 230);
+  --accent-soft:      oklch(0.72 0.16 230 / 0.16);
+  --collapse:         oklch(0.72 0.18 35);
+  --paper-tint:       rgba(232,230,222,0.02);
+  --glass:            rgba(10,13,18,0.78);
+  --accent-rgb-src:   #3FA6E2;
+  --collapse-rgb-src: #E68A5C;
 }
 
 /* ─── Type pairing (data-type="mono" is fixed default) ─── */
