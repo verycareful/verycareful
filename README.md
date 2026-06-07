@@ -32,7 +32,7 @@ Ising Hamiltonians, blind-signature protocols, NFC campus systems.
 
 **[uc-quantum](https://github.com/verycareful/uc-quantum)** — Full factorial benchmark of 44 MA-QAOA variants for Unit Commitment in power systems. Novel contributions: Merit-Order State Preparation, physics-informed mixer weights, Power Orbits, Layerwise-Progressive training. Preprint under review at Research Square.
 
-**[NotBigBrother](https://github.com/Zonde246/NotBigBrother)** *(w/ [zParik](https://github.com/Zonde246))* — Double-blind cryptographic age verification using Chaum blind signatures. Neither the issuer nor the verifying website can surveil the user.
+**[NotBigBrother](https://github.com/Zonde246/NotBigBrother)** *(w/ [zParik](https://github.com/zParik))* — Double-blind cryptographic age verification using Chaum blind signatures. Neither the issuer nor the verifying website can surveil the user.
 
 **[StEAM](https://github.com/verycareful/StEAM_cs)** — Cross-platform student late-arrival tracker with NFC (MIFARE Classic), OCR, and barcode scanning. Ships as both a .NET MAUI app and an Android (Kotlin + Compose) app.
 
