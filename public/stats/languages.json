@@ -1,61 +1,66 @@
 {
-  "updated": "2026-06-01T11:41:04Z",
-  "totalBytes": 4679500,
+  "updated": "2026-06-08T11:01:39Z",
+  "totalBytes": 4935900,
   "languages": [
     {
       "name": "C++",
-      "bytes": 2114120,
-      "pct": 45.18
+      "bytes": 2125750,
+      "pct": 43.07
     },
     {
       "name": "C#",
       "bytes": 975122,
-      "pct": 20.84
+      "pct": 19.76
     },
     {
       "name": "TypeScript",
-      "bytes": 777046,
-      "pct": 16.61
+      "bytes": 812041,
+      "pct": 16.45
     },
     {
       "name": "Python",
       "bytes": 365337,
-      "pct": 7.81
+      "pct": 7.4
+    },
+    {
+      "name": "Kotlin",
+      "bytes": 195566,
+      "pct": 3.96
     },
     {
       "name": "JavaScript",
       "bytes": 114659,
-      "pct": 2.45
+      "pct": 2.32
     },
     {
       "name": "CSS",
-      "bytes": 98137,
-      "pct": 2.1
+      "bytes": 112346,
+      "pct": 2.28
     },
     {
       "name": "HTML",
       "bytes": 92146,
-      "pct": 1.97
+      "pct": 1.87
     },
     {
       "name": "Jupyter Notebook",
       "bytes": 78032,
-      "pct": 1.67
+      "pct": 1.58
     },
     {
       "name": "PLpgSQL",
       "bytes": 33755,
-      "pct": 0.72
+      "pct": 0.68
     },
     {
       "name": "CMake",
       "bytes": 18309,
-      "pct": 0.39
+      "pct": 0.37
     },
     {
       "name": "Java",
       "bytes": 12837,
-      "pct": 0.27
+      "pct": 0.26
     }
   ]
 }
