@@ -40,9 +40,16 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# local
 .claude
 local/
 changes_version.md
 logs_extracted/
 *.zip
 __pycache__/
+
+# Resume
+/resume/
+
+# Readmes
+/readmes/

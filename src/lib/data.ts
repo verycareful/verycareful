@@ -26,13 +26,13 @@ export const HERO: Hero = {
 export const ABOUT: About = {
   body: "Computer Science undergraduate at SRM IST Vadapalani specialising in Quantum Computing. I work at the intersection of research and production software — Ising/QUBO optimization, quantum K-means, and cross-platform campus systems with NFC, OCR and real-time sync. I care about technically serious work that is reproducible, usable, and privacy-respecting.",
   stats: [
-    { v: "9.31/10",  k: "B.Tech CSE — CGPA" },
+    { v: "9.40/10",  k: "B.Tech CSE — CGPA" },
     { v: "10.00/10", k: "Quantum (Hons) — CGPA" },
     { v: "3",        k: "Papers (incl. under review)" },
     { v: "15+",      k: "Public repositories" },
   ],
   edu: [
-    { d: "B.Tech CSE",                       i: "SRM IST Vadapalani", p: "2023 — present", c: "9.31" },
+    { d: "B.Tech CSE",                       i: "SRM IST Vadapalani", p: "2023 — present", c: "9.40" },
     { d: "B.Tech (Honors), Quantum Computing", i: "SRM IST Vadapalani", p: "2025 — present", c: "10.00" },
   ],
   org: [
@@ -61,8 +61,8 @@ export const RESEARCH: Research[] = [
     title: "Comparative Analysis of Classical and Quantum K-Means Clustering",
     period: "2025",
     status: "published",
-    venue: "Zenodo · DOI 10.5281/zenodo.18876209",
-    doi: "doi.org/10.5281/zenodo.18876209",
+    venue: "Zenodo · DOI 10.5281/zenodo.18802705",
+    doi: "doi.org/10.5281/zenodo.18802705",
     stack: ["Python", "Qiskit", "Scikit-learn", "NumPy"],
     summary:
       "Genuine quantum K-Means using SWAP-test fidelity as the distance metric. Validated on the ENB2012 dataset (n=768) and an expanded 4,998-sample high-dimensional set.",
@@ -85,6 +85,17 @@ export const RESEARCH: Research[] = [
 
 export const FEATURED: Featured[] = [
   {
+    name: "lindblad",
+    sub: "C++23 quantum computing framework",
+    desc: "A full quantum stack in modern C++. Four simulator backends — statevector (OpenMP), density-matrix with exact Kraus channels, Clifford stabilizer tableau, and MPS — behind an AUTO selector. Device-realistic noise from T1/T2 specs with exact fidelity, concurrence, and von Neumann entropy metrics. A complete transpiler: ZYZ + KAK consolidation, SABRE layout and routing, IBM heavy-hex targeting, basis translation. Parameter-shift Estimator and Sampler primitives feed a broad algorithm suite — VQE, QAOA / MA-QAOA, Grover, Shor, QPE, QFT / IQFT / AQFT, Bernstein-Vazirani, Simon, Deutsch-Jozsa. OpenQASM 2/3 I/O and optional Python bindings. My long-term systems bet.",
+    stack: ["C++23", "CMake", "Eigen", "NLopt", "OpenMP", "pybind11"],
+    cat: "Quantum",
+    status: "active",
+    diagram: "qpp",
+    repo: "github.com/verycareful/lindblad",
+    site: "verycareful.github.io/lindblad-site/",
+  },
+  {
     name: "MAD",
     sub: "Minimum Ascent Descent — multi-minimum optimizer",
     desc: "Four-phase C++ optimizer that exhaustively finds all global minima of a differentiable 2D loss function. Standard gradient descent collapses to one minimum; MAD uses minimum-ascent trajectories, pass-point stacking, and directional exclusion sets to systematically escape and catalogue every basin. Validated on Himmelblau, Rastrigin, Ackley, and Beale. Collaborations welcome — reach out if this direction interests you.",
@@ -93,17 +104,6 @@ export const FEATURED: Featured[] = [
     status: "active",
     diagram: "mad",
     repo: "github.com/verycareful/MAD",
-  },
-  {
-    name: "lindblad",
-    sub: "C++23 quantum computing framework",
-    desc: "Exact and approximate simulators (statevector, density, Clifford, MPS), transpiler passes, noise modelling, and variational primitives (VQE, QAOA, Grover). Self-driven; long-term systems bet.",
-    stack: ["C++23", "CMake", "Eigen", "OpenMP"],
-    cat: "Quantum",
-    status: "active",
-    diagram: "qpp",
-    repo: "github.com/verycareful/lindblad",
-    site: "verycareful.github.io/lindblad-site/",
   },
   {
     name: "uc-quantum",
@@ -121,11 +121,13 @@ export const FEATURED: Featured[] = [
 export const INDEX: IndexProject[] = [
   { name: "MAD Optimizer",             cat: "Systems",      status: "active",          year: "2026", stack: "C++17 · CMake · Python",     repo: "github.com/verycareful/MAD" },
   { name: "NotBigBrother",             cat: "Privacy",      status: "live",            year: "2024", stack: "Node.js · RSA blind sigs",    repo: "github.com/Zonde246/NotBigBrother", attr: "zParik" },
+  { name: "kern",                      cat: "Privacy",      status: "active",          year: "2026", stack: "Kotlin · Compose · MuPDF",   repo: "github.com/verycareful/kern" },
+  { name: "Qyra",                      cat: "Multiplatform",status: "active",          year: "2026", stack: "Tauri · Rust · React",       repo: "github.com/zParik/Qyra",            attr: "zParik" },
   { name: "Quantum K-Means",          cat: "Quantum",      status: "published",      year: "2025", stack: "Python · Qiskit",            repo: "github.com/verycareful/QKM",                  doi: "doi.org/10.5281/zenodo.18802705" },
   { name: "Industrial Defect Classifier", cat: "Systems",  status: "seeking venue",  year: "2025", stack: "PyTorch · ROCm",             repo: "github.com/verycareful/DL4SDD" },
-  { name: "StEAM (Android)",          cat: "Multiplatform",status: "complete",        year: "2025", stack: "Kotlin · Compose · ML Kit",  repo: "github.com/verycareful/StEAM" },
-  { name: "StEAM (.NET MAUI)",        cat: "Multiplatform",status: "complete",        year: "2024", stack: "C# · MAUI · NFC",            repo: "github.com/verycareful/StEAM_cs" },
-  { name: "ResearchSync",             cat: "Multiplatform",status: "archived",        year: "2025", stack: "C# · MAUI · SQLite",         repo: "github.com/verycareful/ResearchSync" },
+  { name: "StEAM (Android)",          cat: "Multiplatform",status: "archived",        year: "2025", stack: "Kotlin · Compose · ML Kit",  repo: "github.com/verycareful/StEAM" },
+  { name: "StEAM (.NET MAUI)",        cat: "Multiplatform",status: "archived",        year: "2024", stack: "C# · MAUI · NFC",            repo: "github.com/verycareful/StEAM_cs" },
+  { name: "ResearchSync",             cat: "Multiplatform",status: "on hold",         year: "2025", stack: "C# · MAUI · SQLite",         repo: "github.com/verycareful/ResearchSync" },
   { name: "MapStrategyGame",          cat: "Systems",      status: "wip",             year: "2025", stack: "C# · Avalonia",              repo: "github.com/verycareful/MapStrategyGame" },
   { name: "Latecomers Web",           cat: "Web",          status: "complete",        year: "2024", stack: "React · TS · Supabase",      repo: "github.com/verycareful/Latecomers" },
   { name: "ODapp",                    cat: "Multiplatform",status: "complete",        year: "2024", stack: "MAUI · Supabase",            repo: "github.com/verycareful/ODAPP" },
