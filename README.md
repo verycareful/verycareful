@@ -30,7 +30,7 @@ Ising Hamiltonians, blind-signature protocols, NFC campus systems.
 
 **[lindblad](https://github.com/verycareful/lindblad)** — C++23 quantum computing framework. Exact and approximate simulators (statevector, density, Clifford, MPS), transpiler passes, noise modelling, and variational primitives (VQE, QAOA, Grover). Self-driven; long-term systems bet.
 
-**[uc-quantum](https://github.com/verycareful/uc-quantum)** — Full factorial benchmark of 44 MA-QAOA variants for Unit Commitment in power systems. Novel contributions: Merit-Order State Preparation, physics-informed mixer weights, Power Orbits, Layerwise-Progressive training. Preprint under review at Research Square.
+**[uc-quantum](https://github.com/verycareful/uc-quantum)** — Full factorial benchmark of 44 MA-QAOA variants for Unit Commitment in power systems. Novel contributions: Merit-Order State Preparation, physics-informed mixer weights, Power Orbits, Layerwise-Progressive training. Preprint under review at Quantum Machine Intelligence
 
 **[NotBigBrother](https://github.com/Zonde246/NotBigBrother)** *(w/ [zParik](https://github.com/zParik))* — Double-blind cryptographic age verification using Chaum blind signatures. Neither the issuer nor the verifying website can surveil the user.
 
