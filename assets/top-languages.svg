@@ -23,41 +23,41 @@
 <rect x="24" y="52" width="7" height="7" fill="#f34b7d"/>
 <text x="36" y="61" class="lbl">C++</text>
 <rect x="144" y="50" width="534" height="9" rx="2" class="bg2"/>
-<rect x="144" y="50" width="233" height="9" rx="2" fill="#f34b7d" opacity="0.9"/>
-<text x="684" y="61" class="val">43.8%</text>
+<rect x="144" y="50" width="248" height="9" rx="2" fill="#f34b7d" opacity="0.9"/>
+<text x="684" y="61" class="val">46.5%</text>
 <rect x="24" y="86" width="7" height="7" fill="#178600"/>
 <text x="36" y="95" class="lbl">C#</text>
 <rect x="144" y="84" width="534" height="9" rx="2" class="bg2"/>
-<rect x="144" y="84" width="69" height="9" rx="2" fill="#178600" opacity="0.9"/>
-<text x="684" y="95" class="val">13.0%</text>
+<rect x="144" y="84" width="66" height="9" rx="2" fill="#178600" opacity="0.9"/>
+<text x="684" y="95" class="val">12.4%</text>
 <rect x="24" y="120" width="7" height="7" fill="#3178c6"/>
 <text x="36" y="129" class="lbl">TypeScript</text>
 <rect x="144" y="118" width="534" height="9" rx="2" class="bg2"/>
-<rect x="144" y="118" width="59" height="9" rx="2" fill="#3178c6" opacity="0.9"/>
-<text x="684" y="129" class="val">11.1%</text>
+<rect x="144" y="118" width="53" height="9" rx="2" fill="#3178c6" opacity="0.9"/>
+<text x="684" y="129" class="val">10.0%</text>
 <rect x="24" y="154" width="7" height="7" fill="#888888"/>
 <text x="36" y="163" class="lbl">OpenQASM</text>
 <rect x="144" y="152" width="534" height="9" rx="2" class="bg2"/>
-<rect x="144" y="152" width="58" height="9" rx="2" fill="#888888" opacity="0.9"/>
-<text x="684" y="163" class="val">11.0%</text>
+<rect x="144" y="152" width="53" height="9" rx="2" fill="#888888" opacity="0.9"/>
+<text x="684" y="163" class="val">10.0%</text>
 <rect x="24" y="188" width="7" height="7" fill="#3572A5"/>
 <text x="36" y="197" class="lbl">Python</text>
 <rect x="144" y="186" width="534" height="9" rx="2" class="bg2"/>
-<rect x="144" y="186" width="43" height="9" rx="2" fill="#3572A5" opacity="0.9"/>
-<text x="684" y="197" class="val">8.1%</text>
+<rect x="144" y="186" width="42" height="9" rx="2" fill="#3572A5" opacity="0.9"/>
+<text x="684" y="197" class="val">7.9%</text>
 <rect x="24" y="222" width="7" height="7" fill="#A97BFF"/>
 <text x="36" y="231" class="lbl">Kotlin</text>
 <rect x="144" y="220" width="534" height="9" rx="2" class="bg2"/>
-<rect x="144" y="220" width="21" height="9" rx="2" fill="#A97BFF" opacity="0.9"/>
-<text x="684" y="231" class="val">3.9%</text>
+<rect x="144" y="220" width="25" height="9" rx="2" fill="#A97BFF" opacity="0.9"/>
+<text x="684" y="231" class="val">4.7%</text>
 <rect x="24" y="256" width="7" height="7" fill="#e34c26"/>
 <text x="36" y="265" class="lbl">HTML</text>
 <rect x="144" y="254" width="534" height="9" rx="2" class="bg2"/>
-<rect x="144" y="254" width="10" height="9" rx="2" fill="#e34c26" opacity="0.9"/>
-<text x="684" y="265" class="val">2.0%</text>
+<rect x="144" y="254" width="9" height="9" rx="2" fill="#e34c26" opacity="0.9"/>
+<text x="684" y="265" class="val">1.8%</text>
 <rect x="24" y="290" width="7" height="7" fill="#b07219"/>
 <text x="36" y="299" class="lbl">Java</text>
 <rect x="144" y="288" width="534" height="9" rx="2" class="bg2"/>
 <rect x="144" y="288" width="8" height="9" rx="2" fill="#b07219" opacity="0.9"/>
-<text x="684" y="299" class="val">1.7%</text>
+<text x="684" y="299" class="val">1.5%</text>
 </svg>
