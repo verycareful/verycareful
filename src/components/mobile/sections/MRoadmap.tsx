@@ -60,7 +60,8 @@ export default function MRoadmap() {
           ))}
         </div>
         <p className="plan-caveat">
-          A plan, not a promise. What actually happened is recorded below.
+          I write this half by hand. The chart below counts commits, so a week that
+          did not happen shows as a gap.
         </p>
       </div>
 

@@ -14,7 +14,7 @@ import type {
 export const HERO: Hero = {
   name: "SRICHARAN SURESH",
   thesis:
-    "I build at the boundary of quantum theory and shipped software — Ising Hamiltonians, blind-signature protocols, NFC campus systems.",
+    "I write quantum simulators in C++ and privacy-first Android software that never touches the network. Ising Hamiltonians one week, tectonic plate simulation the next.",
   affil: "B.Tech CSE + Quantum Computing (Honors) · SRM IST Vadapalani",
   state: "|ψ⟩ = α|research⟩ + β|production⟩",
   status: [
@@ -25,7 +25,7 @@ export const HERO: Hero = {
 };
 
 export const ABOUT: About = {
-  body: "Computer Science undergraduate at SRM IST Vadapalani specialising in Quantum Computing. I work at the intersection of research and production software — Ising/QUBO optimization, quantum K-means, and cross-platform campus systems with NFC, OCR and real-time sync. I care about technically serious work that is reproducible, usable, and privacy-respecting.",
+  body: "Computer Science undergraduate at SRM IST Vadapalani, specialising in Quantum Computing. Half my time goes into research code: Ising and QUBO formulations, quantum K-means built on SWAP-test fidelity, MA-QAOA benchmarked against simulated annealing. The other half goes into software that runs offline by construction, like a document toolkit that asks for no network permission at all. Clone any repo of mine and you should be able to reproduce what it claims.",
   stats: [
     { v: "9.40/10",  k: "B.Tech CSE — CGPA" },
     { v: "10.00/10", k: "Quantum (Hons) — CGPA" },
@@ -37,7 +37,7 @@ export const ABOUT: About = {
     { d: "B.Tech (Honors), Quantum Computing", i: "SRM IST Vadapalani", p: "2025 — present", c: "10.00" },
   ],
   org: [
-    { n: "CSI Club",       r: "Head of PR & Outreach", p: "Jul 2025 — present" },
+    { n: "CSI Club",       r: "Head of PR & Outreach", p: "Jul 2025 — Aug 2026" },
     { n: "SYNC Community", r: "President",              p: "Apr 2026 — present" },
     { n: "SYNC Community", r: "Head of Operations",    p: "Aug 2024 — Apr 2026" },
   ],
@@ -53,7 +53,7 @@ export const RESEARCH: Research[] = [
     doi: "doi.org/10.21203/rs.3.rs-9533781/v1",
     stack: ["C++23", "Python", "Qiskit", "lindblad", "QAOA"],
     summary:
-      "Full factorial benchmark of 44 MA-QAOA variants across budget tiers and problem sizes. Novel contributions: Merit-Order State Preparation (QSP), physics-informed and inverse-physics-informed mixer weights, Power Orbits, and Layerwise-Progressive training — applied to the Unit Commitment problem in power systems.",
+      "Factorial benchmark of 42 MA-QAOA variants across three budget tiers and two problem sizes, applied to Unit Commitment in power systems. The contributions are merit-order state preparation, physics-informed and inverse mixer weights, power orbits, and layerwise-progressive training. Merit-order preparation reaches 98.5% success at 50 circuit evaluations, then falls to between 22 and 40% the moment you pair it with any other parameter initialisation.",
     eq: "Ĥ = −J Σᵢⱼ σᵢᶻσⱼᶻ − Γ Σᵢ σᵢˣ",
     repo: "github.com/verycareful/uc-quantum",
   },
@@ -66,7 +66,7 @@ export const RESEARCH: Research[] = [
     doi: "doi.org/10.5281/zenodo.18802705",
     stack: ["Python", "Qiskit", "Scikit-learn", "NumPy"],
     summary:
-      "Genuine quantum K-Means using SWAP-test fidelity as the distance metric. Validated on the ENB2012 dataset (n=768) and an expanded 4,998-sample high-dimensional set.",
+      "Quantum K-Means that takes its distance metric from SWAP-test fidelity instead of approximating it classically. Tested on ENB2012 (n=768) and a 4,998-sample high-dimensional set.",
     eq: "F(|φ⟩,|ψ⟩) = |⟨φ|ψ⟩|²  via SWAP test",
     repo: "github.com/verycareful/QKM",
   },
@@ -88,7 +88,7 @@ export const FEATURED: Featured[] = [
   {
     name: "lindblad",
     sub: "C++23 quantum computing framework",
-    desc: "A full quantum stack in modern C++. Four simulator backends — statevector (OpenMP), density-matrix with exact Kraus channels, Clifford stabilizer tableau, and MPS — behind an AUTO selector. Device-realistic noise from T1/T2 specs with exact fidelity, concurrence, and von Neumann entropy metrics. A complete transpiler: ZYZ + KAK consolidation, SABRE layout and routing, IBM heavy-hex targeting, basis translation. Parameter-shift Estimator and Sampler primitives feed a broad algorithm suite — VQE, QAOA / MA-QAOA, Grover, Shor, QPE, QFT / IQFT / AQFT, Bernstein-Vazirani, Simon, Deutsch-Jozsa. OpenQASM 2/3 I/O and optional Python bindings. My long-term systems bet.",
+    desc: "A quantum stack in modern C++. Four simulator backends sit behind an AUTO selector: statevector on OpenMP, density matrix with exact Kraus channels, Clifford stabilizer tableau, and MPS. Noise comes from real T1 and T2 specs, with fidelity, concurrence and von Neumann entropy computed exactly rather than sampled. The transpiler does ZYZ and KAK consolidation, SABRE layout and routing, IBM heavy-hex targeting, and basis translation. Parameter-shift Estimator and Sampler primitives drive VQE, QAOA, MA-QAOA, Grover, Shor, QPE, the QFT family, Bernstein-Vazirani, Simon and Deutsch-Jozsa. Reads and writes OpenQASM 2 and 3, with Python bindings if you want them. This is the project I expect to still be working on in five years.",
     stack: ["C++23", "CMake", "Eigen", "NLopt", "OpenMP", "pybind11"],
     cat: "Quantum",
     status: "active",
@@ -99,7 +99,7 @@ export const FEATURED: Featured[] = [
   {
     name: "MAD",
     sub: "Minimum Ascent Descent — multi-minimum optimizer",
-    desc: "Four-phase C++ optimizer that exhaustively finds all global minima of a differentiable 2D loss function. Standard gradient descent collapses to one minimum; MAD uses minimum-ascent trajectories, pass-point stacking, and directional exclusion sets to systematically escape and catalogue every basin. Validated on Himmelblau, Rastrigin, Ackley, and Beale. Collaborations welcome — reach out if this direction interests you.",
+    desc: "Four-phase C++ optimizer that finds every global minimum of a differentiable 2D loss function, not just the first one gradient descent falls into. It descends to a minimum, climbs out along the shallowest valid uphill direction while avoiding basins it has already catalogued, drops a pass point wherever the valley branches, then pops that stack to try the other branches. Tested on Himmelblau, Rastrigin, Ackley and Beale. I would welcome collaborators on this one.",
     stack: ["C++17", "CMake", "Python"],
     cat: "Systems",
     status: "active",
@@ -109,7 +109,7 @@ export const FEATURED: Featured[] = [
   {
     name: "uc-quantum",
     sub: "Factorial quantum study of Unit Commitment in power systems",
-    desc: "Full factorial benchmark of 44 MA-QAOA variants. Novel contributions include Merit-Order State Preparation, physics-informed mixer weights, Power Orbits, and Layerwise-Progressive training. Preprint under review.",
+    desc: "Factorial benchmark of 42 MA-QAOA variants against the Unit Commitment problem, covering state preparation, parameter initialisation, training schedule and symmetry reduction. Merit-order state preparation wins at tight budgets and breaks under most pairings, which is the result the paper is built around. Preprint under review at Quantum Machine Intelligence.",
     stack: ["C++23", "Python", "Qiskit", "lindblad v2.3.2"],
     cat: "Quantum",
     status: "complete",
@@ -148,48 +148,48 @@ export const NOTEBOOK: NotebookEntry[] = [
   {
     date: "May 2026", tag: "ENGINEERING",
     title: "AI replaces coders. It won't replace engineers.",
-    body: "Coding is translating a known solution into syntax. Software engineering is figuring out what the solution should even be — requirements that contradict, systems that fail in unexpected ways, tradeoffs nobody documented. AI is very good at the first thing. The second thing requires judgment built from shipping and being wrong.",
+    body: "Coding turns a known solution into syntax. Engineering works out what the solution should be, against requirements that contradict each other and tradeoffs nobody wrote down. Models handle the first job now. I only got better at the second one by shipping things that broke.",
   },
   {
     date: "Apr 2026", tag: "ACADEMIC",
-    title: "Fast-track semester 7 — best or worst decision",
-    body: "Compressing a semester changes the texture of learning entirely. Either everything clicks faster under pressure, or nothing sticks because there's no time for it to settle. I genuinely don't know which one this is yet.",
+    title: "Fast-track semester 7: best or worst decision",
+    body: "Compressing a semester changes how the material lands. Some of it clicks faster under pressure than it would have otherwise. The rest never settles, because there is no gap left for it to settle into. Ask me in December which half won.",
   },
   {
     date: "Mar 2026", tag: "QUANTUM",
     title: "lindblad exists because I hit the Qiskit wall",
-    body: "I needed to simulate more qubits than what was realistically possible in my Qiskit workflow. lindblad is now directly tied to my MA-QAOA energy-grid direction — better simulator control changes what experiments I can actually run.",
+    body: "I needed more qubits than my workflow would give me, so I started writing my own simulator. lindblad now feeds the MA-QAOA energy-grid work. Owning the backend changes which experiments I can run at all, not just how fast they finish.",
   },
   {
     date: "Mar 2026", tag: "QUANTUM",
-    title: "Barren plateaus are genuinely terrifying",
-    body: "The deeper the QAOA circuit, the flatter the gradient landscape. Layerwise Freezing helps but I'm not convinced it fully solves the problem at scale. Need to re-read Cerezo et al.",
+    title: "Barren plateaus are terrifying",
+    body: "The deeper the QAOA circuit, the flatter the gradient landscape gets. Layerwise Freezing helps. I doubt it survives at scale. Re-reading Cerezo et al. this week to find out where it breaks.",
   },
   {
     date: "Mar 2026", tag: "PRIVACY",
-    title: "NotBigBrother might actually matter",
-    body: "Most age-verification systems are surveillance pipelines with a legal cover story. Blind signatures decouple identity verification from activity tracking. The math is sound. The hard part is getting anyone to care.",
+    title: "NotBigBrother might matter",
+    body: "Most age-verification systems are surveillance pipelines wearing a legal cover story. Chaum blind signatures split the identity check from the activity log, so the issuer and the site each learn one half and neither learns you. The cryptography holds up fine. Convincing a regulator to require it is the part I have no idea how to do.",
   },
   {
     date: "Feb 2026", tag: "ML",
-    title: "Why did ResNet-50 beat EfficientNet on defect classification?",
-    body: "EfficientNet is supposed to be more parameter-efficient but ResNet-50 GPU hit 89.03% vs EfficientNet-B0's 84.95%. Hypothesis: ResNet's skip connections handle low-level texture features in defect images better.",
+    title: "ResNet-50 beat EfficientNet on defect classification",
+    body: "EfficientNet is meant to be the parameter-efficient one, and it lost: ResNet-50 on GPU hit 89.03% against EfficientNet-B0's 84.95%. My guess is the skip connections carry low-level texture through the network, and a surface defect is mostly texture.",
   },
   {
     date: "Jan 2026", tag: "SYSTEMS",
     title: "NFC + Camera on Android is a nightmare",
-    body: "On Samsung devices, CameraService actively suppresses NFC polling while a CameraCaptureSession is open. Took 3 days to figure out. Fixed it with a custom MauiCameraViewHandler and explicit CAMERA_STATE_CLOSED sync.",
+    body: "On Samsung devices, CameraService suppresses NFC polling while a CameraCaptureSession is open. Three days to find that. The fix was a custom MauiCameraViewHandler that waits on CAMERA_STATE_CLOSED before it re-enables polling.",
   },
   {
     date: "Mar 2026", tag: "SYSTEMS",
-    title: "Good software feels different when the process is real",
-    body: "ResearchSync reminded me how rewarding properly developed software feels. Following a structured SDLC made the project calmer to build, easier to reason about, and far more maintainable.",
+    title: "A real process changes how the build feels",
+    body: "ResearchSync is the first project where I followed a structured SDLC instead of improvising as I went. The build was calmer. When something broke two increments later I could find it, because I had written down why the thing existed in the first place.",
   },
 ];
 
 export const CURRENTLY: Currently[] = [
-  { k: "Working on", v: "kern (pptx editor) and Terramax (tectonic terrain generation)" },
-  { k: "Waiting on", v: "uc-quantum round 2 review · revisions outrank everything when they land" },
+  { k: "Working on", v: "kern's pptx editor, and tectonic terrain in Terramax" },
+  { k: "Waiting on", v: "uc-quantum round 2 review. Revisions take priority over everything when they arrive" },
   { k: "Reading",    v: "Vaswani et al. · Attention Is All You Need (2017)" },
   { k: "Located",    v: "Chennai, India · SRM IST Vadapalani" },
 ];

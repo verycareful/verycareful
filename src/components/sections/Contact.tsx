@@ -40,8 +40,8 @@ export default function Contact() {
               className="italic-serif"
               style={{ fontSize: 18, lineHeight: 1.5, color: "var(--ink-2)", maxWidth: 560, margin: "0 0 32px" }}
             >
-              I read every message. Research collaborations, internships, or projects with a clear
-              technical thesis — those especially.
+              I read every message. Write to me about a research collaboration or a project
+              with a clear technical thesis and you will get a proper reply.
             </p>
 
             <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>

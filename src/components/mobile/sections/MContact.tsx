@@ -15,8 +15,8 @@ export default function MContact() {
       </h2>
 
       <p className="contact-lede">
-        I read every message. Research collaborations, internships, or projects with a clear
-        technical thesis — those especially.
+        I read every message. Write to me about a research collaboration or a project
+        with a clear technical thesis and you will get a proper reply.
       </p>
 
       <div className="contact-links">

@@ -117,8 +117,8 @@ export default function Roadmap() {
               className="italic-serif"
               style={{ fontSize: 13, lineHeight: 1.55, color: "var(--ink-3)", margin: "16px 0 0" }}
             >
-              A plan, not a promise. What actually happened is recorded below, and the two
-              are not always the same.
+              I write this half by hand. The chart below counts commits, so when a week
+              here did not happen, you can see the gap.
             </p>
           </div>
         </div>
