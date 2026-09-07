@@ -6,8 +6,9 @@ const NAV_ITEMS = [
   ["I",   "About",    "#about"],
   ["II",  "Research", "#research"],
   ["III", "Projects", "#projects"],
-  ["IV",  "Lab",      "#lab"],
-  ["V",   "Contact",  "#contact"],
+  ["IV",  "Roadmap",  "#roadmap"],
+  ["V",   "Lab",      "#lab"],
+  ["VI",  "Contact",  "#contact"],
 ] as const;
 
 export default function Navbar() {

@@ -1,0 +1,113 @@
+{
+  "generated": "2026-09-07T12:10:06.005Z",
+  "weeks": [
+    "Jul 20",
+    "Jul 27",
+    "Aug 3",
+    "Aug 10",
+    "Aug 17",
+    "Aug 24",
+    "Aug 31",
+    "Sep 7"
+  ],
+  "repos": [
+    {
+      "repo": "lindblad",
+      "weeks": [
+        4,
+        5,
+        0,
+        2,
+        2,
+        12,
+        14,
+        0
+      ],
+      "total": 39
+    },
+    {
+      "repo": "Terramax",
+      "weeks": [
+        0,
+        8,
+        15,
+        0,
+        0,
+        12,
+        1,
+        0
+      ],
+      "total": 36
+    },
+    {
+      "repo": "lindblad-site",
+      "weeks": [
+        4,
+        3,
+        0,
+        2,
+        2,
+        10,
+        13,
+        0
+      ],
+      "total": 34
+    },
+    {
+      "repo": "KuralAI",
+      "weeks": [
+        0,
+        0,
+        0,
+        17,
+        0,
+        0,
+        0,
+        0
+      ],
+      "total": 17
+    },
+    {
+      "repo": "kern",
+      "weeks": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        7,
+        0
+      ],
+      "total": 11
+    },
+    {
+      "repo": "verycareful",
+      "weeks": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "total": 1
+    },
+    {
+      "repo": "MAD",
+      "weeks": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "total": 1
+    }
+  ]
+}

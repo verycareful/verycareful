@@ -1,32 +1,20 @@
 "use client";
 
-import { NOTEBOOK, CURRENTLY, PATENT } from "@/lib/data";
+import { NOTEBOOK, PATENT } from "@/lib/data";
 
 export default function MLabNotebook() {
   const N = NOTEBOOK;
-  const C = CURRENTLY;
   const P = PATENT;
 
   return (
     <section id="lab" className="m-sec-tint reveal">
       <div className="m-section-marker">
-        <span className="roman">§ IV</span>
-        <span className="title">Lab Notebook / Currently</span>
+        <span className="roman">§ V</span>
+        <span className="title">Lab Notebook</span>
         <span className="meta">field journal · raw thoughts</span>
       </div>
 
-      {/* Currently */}
-      <div className="label" style={{ marginBottom: 12 }}>↳ CURRENTLY</div>
-      <div className="currently-list">
-        {C.map((it, i) => (
-          <div key={i} className="currently-row">
-            <div className="currently-k">{it.k}</div>
-            <div className="currently-v">{it.v}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* Patent card */}
+      {/* Patent card. Currently moved to the Roadmap section. */}
       <div className="patent-card">
         <div className="label">↳ PATENT</div>
         <div className="patent-title">{P.title}</div>

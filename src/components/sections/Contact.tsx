@@ -8,7 +8,7 @@ export default function Contact() {
     >
       <div className="frame">
         <div className="section-marker">
-          <span className="roman">§ V</span>
+          <span className="roman">§ VI</span>
           <span className="title">Correspondence / Colophon</span>
           <span className="meta">end of issue</span>
         </div>

@@ -26,15 +26,15 @@ Ising Hamiltonians, blind-signature protocols, NFC campus systems.
 
 ## Featured Projects
 
-**[MAD](https://github.com/verycareful/MAD)** — Minimum Ascent Descent optimizer in C++17. Four-phase algorithm that exhaustively finds all global minima of a differentiable 2D loss function using minimum-ascent trajectories, pass-point stacking, and directional exclusion sets. Validated on Himmelblau, Rastrigin, Ackley, and Beale functions.
+**[lindblad](https://github.com/verycareful/lindblad)** · C++23 quantum computing framework, and the project everything else orbits. Four simulator backends behind an AUTO selector (statevector with OpenMP, density matrix with exact Kraus channels, Clifford stabilizer tableau, MPS), device-realistic noise from T1/T2 specs, a full transpiler with SABRE layout and routing and IBM heavy-hex targeting, and parameter-shift Estimator and Sampler primitives driving VQE, QAOA, MA-QAOA, Grover, Shor, QPE and QFT. OpenQASM 2/3 I/O, optional Python bindings. Source-available, benchmarked head to head against Qiskit Aer.
 
-**[lindblad](https://github.com/verycareful/lindblad)** — C++23 quantum computing framework. Exact and approximate simulators (statevector, density, Clifford, MPS), transpiler passes, noise modelling, and variational primitives (VQE, QAOA, Grover). Self-driven; long-term systems bet.
+**[kern](https://github.com/verycareful/kern)** · A privacy-first Android document toolkit that is fully offline by construction: **zero network permissions, not now and not ever**. Reads and writes xlsx, xls, csv, docx, pptx, pdf and epub in place through Android's "Open with", with no app-owned folder and no sync. Kotlin and Jetpack Compose, Apache POI for office formats, and MuPDF for PDF through a Rust JNI bridge. AGPL-3.0.
 
-**[uc-quantum](https://github.com/verycareful/uc-quantum)** — Full factorial benchmark of 44 MA-QAOA variants for Unit Commitment in power systems. Novel contributions: Merit-Order State Preparation, physics-informed mixer weights, Power Orbits, Layerwise-Progressive training. Preprint under review at Quantum Machine Intelligence
+**[uc-quantum](https://github.com/verycareful/uc-quantum)** · Factorial study of 42 MA-QAOA variants applied to Unit Commitment in power systems, across four design dimensions and three evaluation budgets. Merit-order state preparation reaches a 98.5% success rate at 50 circuit evaluations against 24.0% for simulated annealing, but collapses to 22 to 40% when paired with any other parameter initialisation, which is the compatibility result the paper is built around. Preprint under review at Quantum Machine Intelligence.
 
-**[NotBigBrother](https://github.com/Zonde246/NotBigBrother)** *(w/ [zParik](https://github.com/zParik))* — Double-blind cryptographic age verification using Chaum blind signatures. Neither the issuer nor the verifying website can surveil the user.
+**[Terramax](https://github.com/verycareful/Terramax)** · A Fabric mod for Minecraft 26.2 that generates worlds from a simulated tectonic plate model rather than from climate noise. Plate centres are scattered by Poisson disk sampling and resolved as a Voronoi diagram; convergent boundaries raise mountains, divergent boundaries open rifts, transform boundaries shear flat. Plate spacing is around 100,000 blocks, so the terrain maths lives in a Minecraft-free core module that a standalone Swing simulator drives, because verifying this in-game would mean flying 50,000 blocks to reach a boundary.
 
-**[StEAM](https://github.com/verycareful/StEAM_cs)** — Cross-platform student late-arrival tracker with NFC (MIFARE Classic), OCR, and barcode scanning. Ships as both a .NET MAUI app and an Android (Kotlin + Compose) app.
+**[MAD](https://github.com/verycareful/MAD)** · Minimum Ascent Descent optimizer in C++17. Four-phase algorithm that exhaustively finds all global minima of a differentiable 2D loss function using minimum-ascent trajectories, pass-point stacking, and directional exclusion sets. Validated on Himmelblau, Rastrigin, Ackley, and Beale functions.
 
 ---
 
@@ -51,8 +51,12 @@ Ising Hamiltonians, blind-signature protocols, NFC campus systems.
 
 ![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-DEA584?style=flat-square&logo=rust&logoColor=black)
 ![.NET MAUI](https://img.shields.io/badge/.NET_MAUI-512BD4?style=flat-square&logo=dotnet&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![Jetpack Compose](https://img.shields.io/badge/Jetpack_Compose-4285F4?style=flat-square&logo=jetpackcompose&logoColor=white)
+![Gradle](https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=gradle&logoColor=white)
+![CMake](https://img.shields.io/badge/CMake-064F8C?style=flat-square&logo=cmake&logoColor=white)
 
 **Web**
 

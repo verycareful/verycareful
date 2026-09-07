@@ -6,6 +6,7 @@ import type {
   IndexProject,
   NotebookEntry,
   Currently,
+  RoadmapWeek,
   Cert,
   Patent,
 } from "./types";
@@ -119,23 +120,28 @@ export const FEATURED: Featured[] = [
 ];
 
 export const INDEX: IndexProject[] = [
-  { name: "MAD Optimizer",             cat: "Systems",      status: "active",          year: "2026", stack: "C++17 · CMake · Python",     repo: "github.com/verycareful/MAD" },
-  { name: "NotBigBrother",             cat: "Privacy",      status: "live",            year: "2024", stack: "Node.js · RSA blind sigs",    repo: "github.com/Zonde246/NotBigBrother", attr: "zParik" },
-  { name: "kern",                      cat: "Privacy",      status: "active",          year: "2026", stack: "Kotlin · Compose · MuPDF",   repo: "github.com/verycareful/kern" },
-  { name: "Qyra",                      cat: "Multiplatform",status: "active",          year: "2026", stack: "Tauri · Rust · React",       repo: "github.com/zParik/Qyra",            attr: "zParik" },
-  { name: "Quantum K-Means",          cat: "Quantum",      status: "published",      year: "2025", stack: "Python · Qiskit",            repo: "github.com/verycareful/QKM",                  doi: "doi.org/10.5281/zenodo.18802705" },
-  { name: "Industrial Defect Classifier", cat: "Systems",  status: "seeking venue",  year: "2025", stack: "PyTorch · ROCm",             repo: "github.com/verycareful/DL4SDD" },
-  { name: "StEAM (Android)",          cat: "Multiplatform",status: "archived",        year: "2025", stack: "Kotlin · Compose · ML Kit",  repo: "github.com/verycareful/StEAM" },
-  { name: "StEAM (.NET MAUI)",        cat: "Multiplatform",status: "archived",        year: "2024", stack: "C# · MAUI · NFC",            repo: "github.com/verycareful/StEAM_cs" },
-  { name: "ResearchSync",             cat: "Multiplatform",status: "on hold",         year: "2025", stack: "C# · MAUI · SQLite",         repo: "github.com/verycareful/ResearchSync" },
-  { name: "MapStrategyGame",          cat: "Systems",      status: "wip",             year: "2025", stack: "C# · Avalonia",              repo: "github.com/verycareful/MapStrategyGame" },
-  { name: "Latecomers Web",           cat: "Web",          status: "complete",        year: "2024", stack: "React · TS · Supabase",      repo: "github.com/verycareful/Latecomers" },
-  { name: "ODapp",                    cat: "Multiplatform",status: "complete",        year: "2024", stack: "MAUI · Supabase",            repo: "github.com/verycareful/ODAPP" },
-  { name: "Sports Shop",              cat: "Web",          status: "complete",        year: "2024", stack: "React · Vite · Supabase",    repo: "github.com/verycareful/sportshopsite" },
-  { name: "Smart Doorbell Alert",     cat: "IoT",          status: "complete",        year: "2024", stack: "ESP8266 · Arduino",          repo: null },
-  { name: "ODSite",                   cat: "Web",          status: "complete",        year: "2024", stack: "Next.js · Supabase",         repo: "github.com/verycareful/ODSite" },
-  { name: "Task Management System",   cat: "Systems",      status: "complete",        year: "2023", stack: "Java · Maven · FlatLaf",     repo: "github.com/verycareful/TMS" },
-  { name: "PGP Sentence Lab",         cat: "Systems",      status: "wip",             year: "2025", stack: "Python · Flask",             repo: "github.com/verycareful/PGP" },
+  { name: "lindblad",                 cat: "Quantum",      status: "active",         year: "2026", stack: "C++23 · CMake · Eigen",      repo: "github.com/verycareful/lindblad" },
+  { name: "Terramax",                 cat: "Systems",      status: "active",         year: "2026", stack: "Java · Fabric · Gradle",     repo: "github.com/verycareful/Terramax" },
+  { name: "kern",                     cat: "Privacy",      status: "active",         year: "2026", stack: "Kotlin · Compose · MuPDF",   repo: "github.com/verycareful/kern" },
+  { name: "MAD Optimizer",            cat: "Systems",      status: "active",         year: "2026", stack: "C++17 · CMake · Python",     repo: "github.com/verycareful/MAD" },
+  { name: "Qyra",                     cat: "Privacy",      status: "active",         year: "2026", stack: "Rust · JNI · MuPDF",         repo: "github.com/verycareful/Qyra",       attr: "fork of zParik" },
+  { name: "KuralAI",                  cat: "Systems",      status: "paused",         year: "2026", stack: "Python · Docker",            repo: "github.com/verycareful/KuralAI" },
+  { name: "Folio",                    cat: "Web",          status: "paused",         year: "2026", stack: "Next.js · TS · Supabase",    repo: null },
+  { name: "ResearchSync",             cat: "Multiplatform",status: "on hold",        year: "2025", stack: "C# · MAUI · SQLite",         repo: null },
+  { name: "EnergyGridOptimisation",   cat: "Quantum",      status: "on hold",        year: "2026", stack: "Python · Qiskit · MA-QAOA",  repo: null },
+  { name: "Quantum K-Means",          cat: "Quantum",      status: "published",      year: "2025", stack: "Python · Qiskit",            repo: "github.com/verycareful/QKM",        doi: "doi.org/10.5281/zenodo.18802705" },
+  { name: "Industrial Defect Classifier", cat: "Systems",  status: "archived",       year: "2025", stack: "PyTorch · ROCm",             repo: null },
+  { name: "Stellar Blitz",            cat: "Systems",      status: "archived",       year: "2026", stack: "Unity 6 · C# · URP",         repo: "github.com/verycareful/ARVR-project" },
+  { name: "StEAM (Android)",          cat: "Multiplatform",status: "archived",       year: "2025", stack: "Kotlin · Compose · ML Kit",  repo: null },
+  { name: "StEAM (.NET MAUI)",        cat: "Multiplatform",status: "archived",       year: "2024", stack: "C# · MAUI · NFC",            repo: "github.com/verycareful/StEAM_cs" },
+  { name: "MapStrategyGame",          cat: "Systems",      status: "archived",       year: "2025", stack: "C# · Avalonia · SkiaSharp",  repo: null },
+  { name: "Latecomers Web",           cat: "Web",          status: "archived",       year: "2024", stack: "React · TS · Supabase",      repo: "github.com/verycareful/Latecomers" },
+  { name: "ODapp",                    cat: "Multiplatform",status: "archived",       year: "2024", stack: "MAUI · Supabase",            repo: "github.com/verycareful/ODAPP" },
+  { name: "ODSite",                   cat: "Web",          status: "archived",       year: "2024", stack: "Next.js · Supabase",         repo: "github.com/verycareful/ODSite" },
+  { name: "Sports Shop",              cat: "Web",          status: "archived",       year: "2024", stack: "React · Vite · Supabase",    repo: "github.com/verycareful/sportshopsite" },
+  { name: "Task Management System",   cat: "Systems",      status: "archived",       year: "2023", stack: "Java · Maven · FlatLaf",     repo: "github.com/verycareful/TMS" },
+  { name: "PGP Sentence Lab",         cat: "Systems",      status: "archived",       year: "2025", stack: "Python · Flask · lambeq",    repo: "github.com/verycareful/PGP" },
+  { name: "Smart Doorbell Alert",     cat: "IoT",          status: "complete",       year: "2024", stack: "ESP8266 · Arduino",          repo: null },
 ];
 
 export const NOTEBOOK: NotebookEntry[] = [
@@ -182,10 +188,37 @@ export const NOTEBOOK: NotebookEntry[] = [
 ];
 
 export const CURRENTLY: Currently[] = [
-  { k: "Working on", v: "lindblad roadmap (simulator + transpiler hardening); portfolio curation" },
-  { k: "Reading",    v: "Vaswani et al. — Attention Is All You Need (2017)" },
-  { k: "Thinking",   v: "German TV shows" },
+  { k: "Working on", v: "kern (pptx editor) and Terramax (tectonic terrain generation)" },
+  { k: "Waiting on", v: "uc-quantum round 2 review · revisions outrank everything when they land" },
+  { k: "Reading",    v: "Vaswani et al. · Attention Is All You Need (2017)" },
   { k: "Located",    v: "Chennai, India · SRM IST Vadapalani" },
+];
+
+/**
+ * Planned work, four weeks ahead. Hand-written and deliberately short.
+ * The generated half of the roadmap lives in activity.json and is not
+ * edited here. If a planned week did not happen, leave it: the contrast
+ * between this and the activity chart is the point.
+ */
+export const ROADMAP: RoadmapWeek[] = [
+  {
+    start: "2026-09-07", label: "Sep 7",
+    projects: ["kern", "Terramax"],
+    note: "pptx editor work in flight; terrain redesign slice 1",
+  },
+  {
+    start: "2026-09-14", label: "Sep 14",
+    projects: ["lindblad", "autonne"],
+  },
+  {
+    start: "2026-09-21", label: "Sep 21",
+    projects: ["MAD", "kern"],
+  },
+  {
+    start: "2026-09-28", label: "Sep 28",
+    projects: ["lindblad", "autonne"],
+    note: "optimizer measurement work, lindblad#101, if scheduled",
+  },
 ];
 
 export const CERTS: Cert[] = [

@@ -6,6 +6,7 @@ on:
     paths:
       - .github/scripts/generate_stats.py
       - .github/workflows/generate-stats.yml
+      - scripts/generate-activity.mjs
   schedule:
     - cron: '0 6 * * 1'
   workflow_dispatch:
@@ -29,11 +30,23 @@ jobs:
           INCLUDE_PRIVATE: ${{ secrets.PROFILE_TOKEN != '' && '1' || '' }}
         run: python .github/scripts/generate_stats.py
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Feeds the Roadmap section on the site. Deliberately uses the default
+      # GITHUB_TOKEN rather than PROFILE_TOKEN: the output is committed to a
+      # public repository, so it must only ever see public repositories.
+      - name: Generate roadmap activity
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/generate-activity.mjs
+
       - name: Commit generated SVGs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/ public/stats/
+          git add assets/ public/stats/ src/lib/activity.json
           if git diff --cached --quiet; then
             echo "no changes"
           else

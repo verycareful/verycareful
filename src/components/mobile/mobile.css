@@ -229,6 +229,49 @@
 }
 .currently-v { font-size: 14px; line-height: 1.5; color: var(--ink); }
 
+/* ── Roadmap: planned weeks ──────────────────────────────── */
+.plan-list { border-top: 1px solid var(--ink); }
+.plan-row  { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.plan-date {
+  font-family: var(--font-mono); font-size: 11px; color: var(--ink);
+  letter-spacing: 0.05em; margin-bottom: 8px;
+}
+.plan-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.plan-chip {
+  font-family: var(--font-mono); font-size: 11px; color: var(--ink);
+  padding: 4px 9px; border: 1px solid var(--rule); background: var(--bg-2);
+}
+.plan-empty { font-size: 13.5px; color: var(--ink-3); }
+.plan-note {
+  font-family: var(--font-italic); font-style: italic; font-size: 13px;
+  line-height: 1.5; color: var(--ink-2); margin: 9px 0 0;
+}
+.plan-caveat {
+  font-family: var(--font-italic); font-style: italic; font-size: 13px;
+  line-height: 1.55; color: var(--ink-3); margin: 14px 0 0;
+}
+
+/* ── Roadmap: generated record ───────────────────────────── */
+.rec-list { border-top: 1px solid var(--ink); }
+.rec-row  { padding: 12px 0; border-bottom: 1px solid var(--rule-soft); }
+.rec-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 12px; margin-bottom: 7px;
+}
+.rec-repo  { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink); }
+.rec-total { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-2); }
+.rec-strip { display: grid; grid-template-columns: repeat(8, 1fr); gap: 3px; }
+.rec-cell  { height: 16px; }
+.rec-axis {
+  display: flex; justify-content: space-between; margin-top: 8px;
+  font-family: var(--font-mono); font-size: 9.5px; color: var(--ink-3);
+  letter-spacing: 0.04em;
+}
+.rec-foot {
+  font-family: var(--font-mono); font-size: 10px; color: var(--ink-3);
+  letter-spacing: 0.04em; line-height: 1.5; margin: 12px 0 0;
+}
+
 /* ── Patent card ─────────────────────────────────────────── */
 .patent-card { margin-top: 28px; padding: 18px; border: 1px solid var(--rule); background: var(--bg); }
 .patent-title { font-size: 14px; line-height: 1.4; color: var(--ink); margin-top: 8px; }

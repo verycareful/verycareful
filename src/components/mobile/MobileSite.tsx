@@ -9,6 +9,7 @@ import MHero from "./sections/MHero";
 import MAbout from "./sections/MAbout";
 import MResearch from "./sections/MResearch";
 import MProjects from "./sections/MProjects";
+import MRoadmap from "./sections/MRoadmap";
 import MLabNotebook from "./sections/MLabNotebook";
 import MCertifications from "./sections/MCertifications";
 import MContact from "./sections/MContact";
@@ -48,6 +49,7 @@ export default function MobileSite() {
         <MAbout />
         <MResearch />
         <MProjects />
+        <MRoadmap />
         <MLabNotebook />
         <MCertifications />
         <MContact />

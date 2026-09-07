@@ -9,7 +9,7 @@ export default function Certifications() {
     <section id="certs" style={{ padding: "var(--pad-section) 0" }}>
       <div className="frame">
         <div className="section-marker">
-          <span className="roman">§ IV·a</span>
+          <span className="roman">§ V·a</span>
           <span className="title">Coursework / Certifications</span>
           <span className="meta">{C.length} entries</span>
         </div>

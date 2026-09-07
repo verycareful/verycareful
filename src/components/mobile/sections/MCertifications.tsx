@@ -8,7 +8,7 @@ export default function MCertifications() {
   return (
     <section id="certs" className="m-sec reveal">
       <div className="m-section-marker">
-        <span className="roman">§ IV·a</span>
+        <span className="roman">§ V·a</span>
         <span className="title">Coursework / Certifications</span>
         <span className="meta">{C.length} entries</span>
       </div>

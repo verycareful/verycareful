@@ -4,7 +4,7 @@ export default function MContact() {
   return (
     <section id="contact" className="m-sec-tint reveal">
       <div className="m-section-marker">
-        <span className="roman">§ V</span>
+        <span className="roman">§ VI</span>
         <span className="title">Correspondence / Colophon</span>
         <span className="meta">end of issue</span>
       </div>

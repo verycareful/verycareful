@@ -6,8 +6,9 @@ const TABS = [
   { roman: "I",   label: "About",    href: "#about"    },
   { roman: "II",  label: "Research", href: "#research" },
   { roman: "III", label: "Projects", href: "#projects" },
-  { roman: "IV",  label: "Lab",      href: "#lab"      },
-  { roman: "V",   label: "Contact",  href: "#contact"  },
+  { roman: "IV",  label: "Roadmap",  href: "#roadmap"  },
+  { roman: "V",   label: "Lab",      href: "#lab"      },
+  { roman: "VI",  label: "Contact",  href: "#contact"  },
 ] as const;
 
 const SECTION_IDS = ["about", "research", "projects", "lab", "contact"];

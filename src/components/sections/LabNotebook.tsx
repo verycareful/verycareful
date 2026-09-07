@@ -1,18 +1,17 @@
 "use client";
 
-import { NOTEBOOK, CURRENTLY, PATENT } from "@/lib/data";
+import { NOTEBOOK, PATENT } from "@/lib/data";
 
 export default function LabNotebook() {
   const N = NOTEBOOK;
-  const C = CURRENTLY;
   const P = PATENT;
 
   return (
     <section id="lab" style={{ padding: "var(--pad-section) 0", background: "var(--bg-2)" }}>
       <div className="frame">
         <div className="section-marker">
-          <span className="roman">§ IV</span>
-          <span className="title">Lab Notebook / Currently</span>
+          <span className="roman">§ V</span>
+          <span className="title">Lab Notebook</span>
           <span className="meta">field journal · raw thoughts</span>
         </div>
 
@@ -23,24 +22,11 @@ export default function LabNotebook() {
             gap: 56,
           }}
         >
-          {/* Left — Currently + patent reference */}
+          {/* Left — patent reference. Currently moved to the Roadmap section. */}
           <div>
-            <div className="label" style={{ marginBottom: 14 }}>↳ CURRENTLY</div>
-            <div style={{ borderTop: "1px solid var(--ink)" }}>
-              {C.map((it, i) => (
-                <div key={i} style={{ padding: "16px 0", borderBottom: "1px solid var(--rule)" }}>
-                  <div className="mono" style={{ fontSize: 10.5, color: "var(--ink-3)", letterSpacing: "0.08em", marginBottom: 6 }}>
-                    {it.k.toUpperCase()}
-                  </div>
-                  <div style={{ fontSize: 14.5, lineHeight: 1.5, color: "var(--ink)" }}>{it.v}</div>
-                </div>
-              ))}
-            </div>
-
             {/* Patent compact reference card */}
             <div
               style={{
-                marginTop: 36,
                 padding: 20,
                 border: "1px solid var(--rule)",
                 background: "var(--bg)",
