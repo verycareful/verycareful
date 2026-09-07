@@ -1,41 +1,41 @@
 {
-  "updated": "2026-09-07T11:53:32Z",
-  "totalBytes": 9617485,
+  "updated": "2026-09-07T12:27:54Z",
+  "totalBytes": 9637152,
   "languages": [
     {
       "name": "C++",
       "bytes": 4748147,
-      "pct": 49.37
+      "pct": 49.27
     },
     {
       "name": "C#",
       "bytes": 1054678,
-      "pct": 10.97
+      "pct": 10.94
     },
     {
       "name": "TypeScript",
-      "bytes": 945050,
-      "pct": 9.83
+      "bytes": 957707,
+      "pct": 9.94
     },
     {
       "name": "OpenQASM",
       "bytes": 875993,
-      "pct": 9.11
+      "pct": 9.09
     },
     {
       "name": "Python",
       "bytes": 686395,
-      "pct": 7.14
+      "pct": 7.12
     },
     {
       "name": "Kotlin",
       "bytes": 393310,
-      "pct": 4.09
+      "pct": 4.08
     },
     {
       "name": "JavaScript",
-      "bytes": 337669,
-      "pct": 3.51
+      "bytes": 342756,
+      "pct": 3.56
     },
     {
       "name": "HTML",
@@ -49,8 +49,8 @@
     },
     {
       "name": "CSS",
-      "bytes": 118003,
-      "pct": 1.23
+      "bytes": 119926,
+      "pct": 1.24
     },
     {
       "name": "Jupyter Notebook",
