@@ -55,8 +55,8 @@ export default function MHero() {
             paddingTop: 18,
           }}
         >
-          <span>VOL. III &nbsp;·&nbsp; ISSUE 04</span>
-          <span>CHENNAI &nbsp;·&nbsp; MAY 2026</span>
+          <span>VOL. III &nbsp;·&nbsp; ISSUE 05</span>
+          <span>CHENNAI &nbsp;·&nbsp; SEPT 2026</span>
         </div>
 
         {/* Bra-ket line */}

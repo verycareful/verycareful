@@ -43,7 +43,7 @@ export default function Hero() {
         }}
       >
         <div className="mono" style={{ fontSize: 11, letterSpacing: "0.16em", color: "var(--ink-3)" }}>
-          VOL. III &nbsp;·&nbsp; ISSUE 04 &nbsp;·&nbsp; CHENNAI &nbsp;·&nbsp; MAY 2026
+          VOL. III &nbsp;·&nbsp; ISSUE 05 &nbsp;·&nbsp; CHENNAI &nbsp;·&nbsp; SEPTEMBER 2026
         </div>
         <div className="mono" style={{ fontSize: 11, letterSpacing: "0.16em", color: "var(--ink-3)" }}>
           PORTFOLIO &nbsp;/&nbsp; LAB JOURNAL &nbsp;/&nbsp; CV

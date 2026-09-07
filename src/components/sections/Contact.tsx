@@ -122,7 +122,7 @@ export default function Contact() {
 
             <p className="mono" style={{ fontSize: 11, color: "var(--ink-3)", marginTop: 16, lineHeight: 1.6, letterSpacing: "0.04em" }}>
               © 2026 Sricharan Suresh. Some rights reserved.<br />
-              Last revised May 2026 · Vol. III, Issue 04.
+              Last revised September 2026 · Vol. III, Issue 05.
             </p>
 
             <hr className="rule-soft" style={{ margin: "20px 0" }} />
