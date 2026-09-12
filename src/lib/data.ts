@@ -18,8 +18,8 @@ export const HERO: Hero = {
   affil: "B.Tech CSE + Quantum Computing (Honors) · SRM IST Vadapalani",
   state: "|ψ⟩ = α|research⟩ + β|production⟩",
   status: [
-    { k: "READING",  v: "Vaswani et al., Attention Is All You Need (2017)" },
-    { k: "BUILDING", v: "lindblad — C++23 quantum simulator suite" },
+    { k: "READING",  v: "Batsambuu Batbold and Lori Ziegelmeier. From Chaos to Continents: Voronoi-Based Procedural Terrain Generation with Hydrology and 3D Visualization (Media Exposition)" },
+    { k: "BUILDING", v: "kern - PPTX suite" },
     { k: "REVIEW",   v: "Merit-Order State Preparation for Budget-Efficient MA-QAOA (preprint rs-9533781)" },
   ],
 };
