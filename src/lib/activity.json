@@ -1,71 +1,71 @@
 {
-  "generated": "2026-09-07T12:28:05.397Z",
+  "generated": "2026-09-14T12:08:47.277Z",
   "weeks": [
-    "Jul 20",
     "Jul 27",
     "Aug 3",
     "Aug 10",
     "Aug 17",
     "Aug 24",
     "Aug 31",
-    "Sep 7"
+    "Sep 7",
+    "Sep 14"
   ],
   "repos": [
     {
-      "repo": "lindblad",
+      "repo": "dotfiles",
       "weeks": [
-        4,
-        5,
         0,
-        2,
-        2,
-        12,
-        14,
+        0,
+        0,
+        0,
+        0,
+        0,
+        49,
         0
       ],
-      "total": 39
+      "total": 49
     },
     {
       "repo": "Terramax",
       "weeks": [
-        0,
         8,
         15,
         0,
         0,
         12,
         1,
+        9,
         0
       ],
-      "total": 36
+      "total": 45
+    },
+    {
+      "repo": "lindblad",
+      "weeks": [
+        5,
+        0,
+        2,
+        2,
+        12,
+        14,
+        2,
+        0
+      ],
+      "total": 37
     },
     {
       "repo": "lindblad-site",
       "weeks": [
-        4,
         3,
         0,
         2,
         2,
         10,
         13,
+        3,
         0
       ],
-      "total": 34
-    },
-    {
-      "repo": "KuralAI",
-      "weeks": [
-        0,
-        0,
-        0,
-        17,
-        0,
-        0,
-        0,
-        0
-      ],
-      "total": 17
+      "total": 33
     },
     {
       "repo": "kern",
@@ -74,18 +74,60 @@
         0,
         0,
         0,
-        0,
         4,
+        7,
+        16,
+        0
+      ],
+      "total": 27
+    },
+    {
+      "repo": "KuralAI",
+      "weeks": [
+        0,
+        0,
+        17,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "total": 17
+    },
+    {
+      "repo": "realworld",
+      "weeks": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         7,
         0
       ],
-      "total": 11
+      "total": 7
     },
     {
       "repo": "verycareful",
       "weeks": [
-        0,
         1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0
+      ],
+      "total": 5
+    },
+    {
+      "repo": "FLOP",
+      "weeks": [
+        0,
+        0,
         0,
         0,
         0,
@@ -93,7 +135,7 @@
         0,
         1
       ],
-      "total": 2
+      "total": 1
     },
     {
       "repo": "MAD",
@@ -103,8 +145,8 @@
         0,
         0,
         0,
-        0,
         1,
+        0,
         0
       ],
       "total": 1
