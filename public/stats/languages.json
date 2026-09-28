@@ -1,96 +1,101 @@
 {
-  "updated": "2026-09-21T12:17:18Z",
-  "totalBytes": 10550945,
+  "updated": "2026-09-28T12:06:53Z",
+  "totalBytes": 11214610,
   "languages": [
     {
       "name": "C++",
-      "bytes": 5279969,
-      "pct": 50.04
+      "bytes": 5888914,
+      "pct": 52.51
     },
     {
       "name": "C#",
       "bytes": 1054678,
-      "pct": 10.0
+      "pct": 9.4
     },
     {
       "name": "TypeScript",
       "bytes": 958639,
-      "pct": 9.09
+      "pct": 8.55
     },
     {
       "name": "OpenQASM",
       "bytes": 875993,
-      "pct": 8.3
+      "pct": 7.81
     },
     {
       "name": "Python",
       "bytes": 724949,
-      "pct": 6.87
+      "pct": 6.46
     },
     {
       "name": "Kotlin",
       "bytes": 544064,
-      "pct": 5.16
+      "pct": 4.85
     },
     {
       "name": "JavaScript",
       "bytes": 342756,
-      "pct": 3.25
+      "pct": 3.06
     },
     {
       "name": "Java",
       "bytes": 134181,
-      "pct": 1.27
+      "pct": 1.2
     },
     {
       "name": "CSS",
       "bytes": 130017,
-      "pct": 1.23
+      "pct": 1.16
     },
     {
       "name": "HTML",
       "bytes": 125319,
-      "pct": 1.19
+      "pct": 1.12
     },
     {
       "name": "QML",
-      "bytes": 92534,
-      "pct": 0.88
+      "bytes": 108468,
+      "pct": 0.97
+    },
+    {
+      "name": "Shell",
+      "bytes": 81945,
+      "pct": 0.73
     },
     {
       "name": "Jupyter Notebook",
       "bytes": 78032,
-      "pct": 0.74
+      "pct": 0.7
     },
     {
       "name": "CMake",
-      "bytes": 62920,
-      "pct": 0.6
-    },
-    {
-      "name": "Shell",
-      "bytes": 46054,
-      "pct": 0.44
+      "bytes": 63694,
+      "pct": 0.57
     },
     {
       "name": "PLpgSQL",
       "bytes": 33755,
-      "pct": 0.32
+      "pct": 0.3
     },
     {
       "name": "TeX",
       "bytes": 33344,
-      "pct": 0.32
+      "pct": 0.3
     },
     {
       "name": "Lua",
-      "bytes": 17697,
-      "pct": 0.17
+      "bytes": 18150,
+      "pct": 0.16
     },
     {
       "name": "Wolfram Language",
       "bytes": 15479,
-      "pct": 0.15
+      "pct": 0.14
+    },
+    {
+      "name": "C",
+      "bytes": 1668,
+      "pct": 0.01
     },
     {
       "name": "Dockerfile",
