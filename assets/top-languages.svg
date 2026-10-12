@@ -24,12 +24,12 @@
 <text x="36" y="61" class="lbl">C++</text>
 <rect x="144" y="50" width="534" height="9" rx="2" class="bg2"/>
 <rect x="144" y="50" width="297" height="9" rx="2" fill="#f34b7d" opacity="0.9"/>
-<text x="684" y="61" class="val">55.7%</text>
+<text x="684" y="61" class="val">55.6%</text>
 <rect x="24" y="86" width="7" height="7" fill="#178600"/>
 <text x="36" y="95" class="lbl">C#</text>
 <rect x="144" y="84" width="534" height="9" rx="2" class="bg2"/>
 <rect x="144" y="84" width="46" height="9" rx="2" fill="#178600" opacity="0.9"/>
-<text x="684" y="95" class="val">8.8%</text>
+<text x="684" y="95" class="val">8.7%</text>
 <rect x="24" y="120" width="7" height="7" fill="#3178c6"/>
 <text x="36" y="129" class="lbl">TypeScript</text>
 <rect x="144" y="118" width="534" height="9" rx="2" class="bg2"/>
