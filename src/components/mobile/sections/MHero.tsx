@@ -30,7 +30,7 @@ export default function MHero() {
       {/* Measurement tooltip */}
       <div ref={tipRef} className="measure-tip" />
 
-      {/* Inner — flex column, 88vh min-height so hint row sits at bottom */}
+      {/* Inner: flex column, 88vh min-height so hint row sits at bottom */}
       <div
         style={{
           position: "relative",
@@ -55,7 +55,7 @@ export default function MHero() {
             paddingTop: 18,
           }}
         >
-          <span>VOL. III &nbsp;·&nbsp; ISSUE 05</span>
+          <span>VOL. III &nbsp;·&nbsp; ISSUE 06</span>
           <span>CHENNAI &nbsp;·&nbsp; SEPT 2026</span>
         </div>
 
@@ -184,7 +184,7 @@ export default function MHero() {
           ))}
         </div>
 
-        {/* Flexible spacer — pushes hint row to bottom */}
+        {/* Flexible spacer: pushes hint row to bottom */}
         <div style={{ flex: 1, minHeight: 24 }} />
 
         {/* Hint row */}

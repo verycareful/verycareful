@@ -20,7 +20,7 @@ export default function Contact() {
             gap: 56,
           }}
         >
-          {/* Left — CTA */}
+          {/* Left: CTA */}
           <div>
             <h2
               className="display"
@@ -108,7 +108,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right — colophon */}
+          {/* Right: colophon */}
           <div style={{ borderLeft: "1px solid var(--rule)", paddingLeft: 32 }}>
             <div className="label" style={{ marginBottom: 14 }}>↳ COLOPHON</div>
             <p style={{ fontSize: 13.5, lineHeight: 1.6, color: "var(--ink-2)", margin: "0 0 16px" }}>
@@ -122,7 +122,7 @@ export default function Contact() {
 
             <p className="mono" style={{ fontSize: 11, color: "var(--ink-3)", marginTop: 16, lineHeight: 1.6, letterSpacing: "0.04em" }}>
               © 2026 Sricharan Suresh. Some rights reserved.<br />
-              Last revised September 2026 · Vol. III, Issue 05.
+              Last revised October 2026 · Vol. III, Issue 06.
             </p>
 
             <hr className="rule-soft" style={{ margin: "20px 0" }} />

@@ -46,20 +46,34 @@ export interface Research {
   stack: string[];
   summary: string;
   eq: string;
-  repo: string;
+  /** Null when the repository is private; the page says so instead of linking. */
+  repo: string | null;
 }
 
-export interface Featured {
+/** One repository inside a project cluster. */
+export interface ClusterMember {
+  name: string;
+  /** What this member does inside the cluster, in one line. */
+  role: string;
+  stack: string;
+  status: string;
+  /** Null when the repository is private. */
+  repo: string | null;
+  site?: string;
+  doi?: string;
+  /** Collaborators, shown as "w/ ...". */
+  attr?: string;
+  /** Which specimen figure to draw for this repository. */
+  fig: "circuit" | "simplex" | "spectrum" | "landscape" | "pages" | "window" | "phone" | "plates" | "biomes";
+}
+
+/** A group of related repositories, shown as one plate under Selected Works. */
+export interface Cluster {
   name: string;
   sub: string;
   desc: string;
-  stack: string[];
   cat: string;
-  status: string;
-  diagram: "qpp" | "blind" | "qaoa" | "mad";
-  repo: string;
-  site?: string;
-  doi?: string;
+  members: ClusterMember[];
 }
 
 export interface IndexProject {
@@ -83,18 +97,6 @@ export interface NotebookEntry {
 export interface Currently {
   k: string;
   v: string;
-}
-
-/** One planned week. Hand-written, four weeks ahead. */
-export interface RoadmapWeek {
-  /** ISO date of the Monday, e.g. "2026-09-07". */
-  start: string;
-  /** Human label, e.g. "Sep 7". */
-  label: string;
-  /** Project names planned for the week. Empty means nothing committed. */
-  projects: string[];
-  /** Optional one-line reason or caveat. */
-  note?: string;
 }
 
 /**

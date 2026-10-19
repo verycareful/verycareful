@@ -25,7 +25,7 @@ export default function Patent() {
             alignItems: "start",
           }}
         >
-          {/* Left — application number */}
+          {/* Left: application number */}
           <div>
             <div className="label" style={{ marginBottom: 12 }}>↳ APPLICATION №</div>
             <div
@@ -51,7 +51,7 @@ export default function Patent() {
             </div>
           </div>
 
-          {/* Right — title + abstract */}
+          {/* Right: title + abstract */}
           <div style={{ borderLeft: "1px solid var(--rule)", paddingLeft: 32 }}>
             <div className="label" style={{ marginBottom: 14 }}>↳ TITLE</div>
             <h3

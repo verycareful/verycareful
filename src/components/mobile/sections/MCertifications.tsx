@@ -35,7 +35,7 @@ export default function MCertifications() {
                 verify <span className="arr">↗</span>
               </a>
             ) : (
-              <span className="mono" style={{ fontSize: 10.5, color: "var(--ink-4)", alignSelf: "center" }}>—</span>
+              <span className="mono" style={{ fontSize: 10.5, color: "var(--ink-4)", alignSelf: "center" }}>–</span>
             )}
           </div>
         ))}

@@ -99,7 +99,7 @@ export default function MContact() {
 
         <p className="colophon-fine" style={{ marginTop: 16 }}>
           © 2026 Sricharan Suresh. Some rights reserved.<br />
-          Last revised September 2026 · Vol. III, Issue 05.
+          Last revised October 2026 · Vol. III, Issue 06.
         </p>
 
         <hr className="rule-soft" style={{ margin: "20px 0" }} />

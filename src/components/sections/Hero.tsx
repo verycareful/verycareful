@@ -43,7 +43,7 @@ export default function Hero() {
         }}
       >
         <div className="mono" style={{ fontSize: 11, letterSpacing: "0.16em", color: "var(--ink-3)" }}>
-          VOL. III &nbsp;·&nbsp; ISSUE 05 &nbsp;·&nbsp; CHENNAI &nbsp;·&nbsp; SEPTEMBER 2026
+          VOL. III &nbsp;·&nbsp; ISSUE 06 &nbsp;·&nbsp; CHENNAI &nbsp;·&nbsp; OCTOBER 2026
         </div>
         <div className="mono" style={{ fontSize: 11, letterSpacing: "0.16em", color: "var(--ink-3)" }}>
           PORTFOLIO &nbsp;/&nbsp; LAB JOURNAL &nbsp;/&nbsp; CV
@@ -51,7 +51,7 @@ export default function Hero() {
       </div>
 
       {/*
-        Single-column grid frame — stretches to viewport height so the inner
+        Single-column grid frame: stretches to viewport height so the inner
         two-column grid (alignItems: end) can push name/thesis to the bottom.
       */}
       <div
@@ -68,7 +68,7 @@ export default function Hero() {
         }}
       >
         {/*
-          Two-column grid — alignItems: end pushes both columns to the bottom
+          Two-column grid: alignItems: end pushes both columns to the bottom
           of the stretched parent grid area.
         */}
         <div
@@ -79,7 +79,7 @@ export default function Hero() {
             alignItems: "end",
           }}
         >
-          {/* Left — name + state vector */}
+          {/* Left: name + state vector */}
           <div>
             <div className="mono" style={{ fontSize: 11, letterSpacing: "0.18em", color: "var(--ink-3)", marginBottom: 18 }}>
               ⟨φ|{" "}
@@ -110,7 +110,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right — thesis */}
+          {/* Right: thesis */}
           <div style={{ borderLeft: "1px solid var(--rule)", paddingLeft: 24 }}>
             <div className="label" style={{ marginBottom: 10 }}>↳ THESIS · eq. 0.1</div>
             <p style={{ fontSize: 18, lineHeight: 1.45, margin: 0, color: "var(--ink)", maxWidth: 360, fontWeight: 400 }}>
@@ -159,7 +159,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Status strip — spans full width via gridColumn */}
+          {/* Status strip: spans full width via gridColumn */}
           <div
             style={{
               gridColumn: "1 / -1",

@@ -1,6 +1,6 @@
 "use client";
 
-import { CURRENTLY, ROADMAP } from "@/lib/data";
+import { CURRENTLY } from "@/lib/data";
 import activityJson from "@/lib/activity.json";
 import type { ActivitySnapshot } from "@/lib/types";
 
@@ -14,7 +14,6 @@ function cellStyle(count: number, max: number): React.CSSProperties {
 
 export default function MRoadmap() {
   const C = CURRENTLY;
-  const R = ROADMAP;
   const A = activity;
 
   const max = Math.max(1, ...A.repos.flatMap((r) => r.weeks));
@@ -24,8 +23,8 @@ export default function MRoadmap() {
     <section id="roadmap" className="reveal">
       <div className="m-section-marker">
         <span className="roman">§ IV</span>
-        <span className="title">Roadmap / Plan and Record</span>
-        <span className="meta">plan by hand · record generated weekly</span>
+        <span className="title">Roadmap / Currently and Record</span>
+        <span className="meta">status by hand · record generated weekly</span>
       </div>
 
       {/* Currently */}
@@ -37,32 +36,6 @@ export default function MRoadmap() {
             <div className="currently-v">{it.v}</div>
           </div>
         ))}
-      </div>
-
-      {/* Planned */}
-      <div style={{ marginTop: 40 }}>
-        <div className="label" style={{ marginBottom: 12 }}>↳ PLANNED · NEXT FOUR WEEKS</div>
-        <div className="plan-list">
-          {R.map((w) => (
-            <div key={w.start} className="plan-row">
-              <div className="plan-date">{w.label}</div>
-              <div className="plan-chips">
-                {w.projects.length === 0 ? (
-                  <span className="plan-empty">unallocated</span>
-                ) : (
-                  w.projects.map((p) => (
-                    <span key={p} className="plan-chip">{p}</span>
-                  ))
-                )}
-              </div>
-              {w.note && <p className="plan-note">{w.note}</p>}
-            </div>
-          ))}
-        </div>
-        <p className="plan-caveat">
-          I write this half by hand. The chart below counts commits, so a week that
-          did not happen shows as a gap.
-        </p>
       </div>
 
       {/* Record */}

@@ -2,11 +2,10 @@ import type {
   Hero,
   About,
   Research,
-  Featured,
+  Cluster,
   IndexProject,
   NotebookEntry,
   Currently,
-  RoadmapWeek,
   Cert,
   Patent,
 } from "./types";
@@ -14,32 +13,32 @@ import type {
 export const HERO: Hero = {
   name: "SRICHARAN SURESH",
   thesis:
-    "I write quantum simulators in C++ and privacy-first Android software that never touches the network. Ising Hamiltonians one week, tectonic plate simulation the next.",
+    "I write a quantum computing stack in C++23, with the optimizers and linear algebra under it, and document tools for Android and the desktop that never touch the network. Ising Hamiltonians one week, tectonic plates the next.",
   affil: "B.Tech CSE + Quantum Computing (Honors) · SRM IST Vadapalani",
   state: "|ψ⟩ = α|research⟩ + β|production⟩",
   status: [
     { k: "READING",  v: "Batsambuu Batbold and Lori Ziegelmeier. From Chaos to Continents: Voronoi-Based Procedural Terrain Generation with Hydrology and 3D Visualization (Media Exposition)" },
-    { k: "BUILDING", v: "kern - PPTX suite" },
-    { k: "REVIEW",   v: "Merit-Order State Preparation for Budget-Efficient MA-QAOA (preprint rs-9533781)" },
+    { k: "BUILDING", v: "My own Hyprland configuration" },
+    { k: "IN PRESS", v: "Merit-Order State Preparation for Budget-Efficient MA-QAOA (Quantum Machine Intelligence)" },
   ],
 };
 
 export const ABOUT: About = {
-  body: "Computer Science undergraduate at SRM IST Vadapalani, specialising in Quantum Computing. Half my time goes into research code: Ising and QUBO formulations, quantum K-means built on SWAP-test fidelity, MA-QAOA benchmarked against simulated annealing. The other half goes into software that runs offline by construction, like a document toolkit that asks for no network permission at all. Clone any repo of mine and you should be able to reproduce what it claims.",
+  body: "Computer Science undergraduate at SRM IST Vadapalani, specialising in Quantum Computing. Half my time goes into research code: Ising and QUBO formulations, quantum K-means built on SWAP-test fidelity, MA-QAOA benchmarked against simulated annealing. The other half goes into private software, like a document toolkit that asks for no network permission at all. Clone any repo of mine and you should be able to reproduce what it claims.",
   stats: [
-    { v: "9.40/10",  k: "B.Tech CSE — CGPA" },
-    { v: "10.00/10", k: "Quantum (Hons) — CGPA" },
-    { v: "3",        k: "Papers (incl. under review)" },
+    { v: "9.40/10",  k: "B.Tech CSE · CGPA" },
+    { v: "10.00/10", k: "Quantum (Hons) · CGPA" },
+    { v: "3",        k: "Papers (1 published, 1 in press)" },
     { v: "15+",      k: "Public repositories" },
   ],
   edu: [
-    { d: "B.Tech CSE",                       i: "SRM IST Vadapalani", p: "2023 — present", c: "9.40" },
-    { d: "B.Tech (Honors), Quantum Computing", i: "SRM IST Vadapalani", p: "2025 — present", c: "10.00" },
+    { d: "B.Tech CSE",                       i: "SRM IST Vadapalani", p: "2023 – present", c: "9.40" },
+    { d: "B.Tech (Honors), Quantum Computing", i: "SRM IST Vadapalani", p: "2025 – present", c: "10.00" },
   ],
   org: [
-    { n: "CSI Club",       r: "Head of PR & Outreach", p: "Jul 2025 — Aug 2026" },
-    { n: "SYNC Community", r: "President",              p: "Apr 2026 — present" },
-    { n: "SYNC Community", r: "Head of Operations",    p: "Aug 2024 — Apr 2026" },
+    { n: "CSI Club",       r: "Head of PR & Outreach", p: "Jul 2025 – Aug 2026" },
+    { n: "SYNC Community", r: "President",              p: "Apr 2026 – present" },
+    { n: "SYNC Community", r: "Head of Operations",    p: "Aug 2024 – Apr 2026" },
   ],
 };
 
@@ -47,15 +46,15 @@ export const RESEARCH: Research[] = [
   {
     n: "01",
     title: "Merit-Order State Preparation for Budget-Efficient MA-QAOA: A Factorial Study of Initialisation, Training, and Noise Resilience in Power Systems Unit Commitment",
-    period: "Jan 2026 — May 2026",
-    status: "under review",
-    venue: "Research Square · preprint · DOI 10.21203/rs.3.rs-9533781/v1",
+    period: "Jan 2026 – May 2026",
+    status: "accepted",
+    venue: "Quantum Machine Intelligence (Springer Nature) · accepted, awaiting typesetting · preprint DOI 10.21203/rs.3.rs-9533781/v1",
     doi: "doi.org/10.21203/rs.3.rs-9533781/v1",
-    stack: ["C++23", "Python", "Qiskit", "lindblad", "QAOA"],
+    stack: ["C++23", "lindblad", "NLopt", "Eigen", "QAOA"],
     summary:
       "Factorial benchmark of 42 MA-QAOA variants across three budget tiers and two problem sizes, applied to Unit Commitment in power systems. The contributions are merit-order state preparation, physics-informed and inverse mixer weights, power orbits, and layerwise-progressive training. Merit-order preparation reaches 98.5% success at 50 circuit evaluations, then falls to between 22 and 40% the moment you pair it with any other parameter initialisation.",
     eq: "Ĥ = −J Σᵢⱼ σᵢᶻσⱼᶻ − Γ Σᵢ σᵢˣ",
-    repo: "github.com/verycareful/uc-quantum",
+    repo: null,
   },
   {
     n: "02",
@@ -80,58 +79,70 @@ export const RESEARCH: Research[] = [
     summary:
       "17-model study across 4 deep-learning architectures and 9 classical baselines. ResNet-50 (GPU) reached 89.03% accuracy at 3.02 ms latency (331 FPS).",
     eq: "argmin_θ  𝔼[ℓ(f_θ(x), y)]   with transfer init",
-    repo: "github.com/verycareful/DL4SDD",
+    repo: null,
   },
 ];
 
-export const FEATURED: Featured[] = [
+export const CLUSTERS: Cluster[] = [
   {
     name: "lindblad",
-    sub: "C++23 quantum computing framework",
-    desc: "A quantum stack in modern C++. Four simulator backends sit behind an AUTO selector: statevector on OpenMP, density matrix with exact Kraus channels, Clifford stabilizer tableau, and MPS. Noise comes from real T1 and T2 specs, with fidelity, concurrence and von Neumann entropy computed exactly rather than sampled. The transpiler does ZYZ and KAK consolidation, SABRE layout and routing, IBM heavy-hex targeting, and basis translation. Parameter-shift Estimator and Sampler primitives drive VQE, QAOA, MA-QAOA, Grover, Shor, QPE, the QFT family, Bernstein-Vazirani, Simon and Deutsch-Jozsa. Reads and writes OpenQASM 2 and 3, with Python bindings if you want them. This is the project I expect to still be working on in five years.",
-    stack: ["C++23", "CMake", "Eigen", "NLopt", "OpenMP", "pybind11"],
+    sub: "A C++23 quantum computing stack, and the work built on it",
+    desc: "lindblad is a quantum computing framework in modern C++. Four simulator backends sit behind an AUTO selector: statevector on OpenMP, density matrix with exact Kraus channels, Clifford stabilizer tableau, and MPS. The transpiler does ZYZ and KAK consolidation, SABRE layout and routing, and IBM heavy-hex targeting, and parameter-shift primitives drive VQE, QAOA, MA-QAOA, Grover, Shor and the QFT family. FLOP supplies the derivative-free optimizers the variational algorithms call. autonne, written with shek014 and zParik, supplies the small complex SVDs the MPS backend splits its bonds with. uc-quantum is the first paper run on it. This is the project I expect to still be working on in five years.",
     cat: "Quantum",
-    status: "active",
-    diagram: "qpp",
-    repo: "github.com/verycareful/lindblad",
-    site: "verycareful.github.io/lindblad-site/",
+    members: [
+      { name: "lindblad",   role: "Simulators, transpiler and algorithms",                       stack: "C++23 · Eigen · OpenMP · pybind11", status: "active",   repo: "github.com/verycareful/lindblad", site: "verycareful.github.io/lindblad-site/", fig: "circuit" },
+      { name: "FLOP",       role: "Derivative-free optimizers: COBYLA and Nelder-Mead",          stack: "C++23 · CMake",                     status: "active",   repo: "github.com/verycareful/FLOP", fig: "simplex" },
+      { name: "autonne",    role: "Truncated SVD and Hermitian eigensolver for small matrices",  stack: "C++ · CMake",                       status: "active",   repo: "github.com/shek014/autonne", attr: "shek014, zParik", fig: "spectrum" },
+      { name: "uc-quantum", role: "MA-QAOA for Unit Commitment, accepted at Quantum Machine Intelligence", stack: "C++23 · lindblad · NLopt", status: "accepted", repo: null, doi: "doi.org/10.21203/rs.3.rs-9533781/v1", fig: "landscape" },
+    ],
   },
   {
-    name: "MAD",
-    sub: "Minimum Ascent Descent — multi-minimum optimizer",
-    desc: "Four-phase C++ optimizer that finds every global minimum of a differentiable 2D loss function, not just the first one gradient descent falls into. It descends to a minimum, climbs out along the shallowest valid uphill direction while avoiding basins it has already catalogued, drops a pass point wherever the valley branches, then pops that stack to try the other branches. Tested on Himmelblau, Rastrigin, Ackley and Beale. I would welcome collaborators on this one.",
-    stack: ["C++17", "CMake", "Python"],
+    name: "kern",
+    sub: "Document tools that never touch the network",
+    desc: "kern is a document toolkit that never needs the network. kernkraft is the shared Rust core: document formats, PDF page operations (extract, split, merge, rotate, reorder) and the file operations around them, with atomic saves. No crate in it may depend on an HTTP, socket or async runtime, and CI checks that. kern - desktop wraps the core in a Tauri app. kern - android is the Kotlin app, with document viewers and a PowerPoint editor, and moves onto the same core later.",
+    cat: "Privacy",
+    members: [
+      { name: "kernkraft",     role: "Shared core: formats, PDF operations, atomic save", stack: "Rust · MuPDF",             status: "active",            repo: "github.com/verycareful/kernkraft", fig: "pages" },
+      { name: "kern - desktop", role: "Desktop app on the shared core",                   stack: "Rust · Tauri · TypeScript", status: "early development", repo: "github.com/verycareful/kern-desktop", fig: "window" },
+      { name: "kern - android", role: "Android app: viewers and a PowerPoint editor",     stack: "Kotlin · Compose · MuPDF",  status: "active",            repo: "github.com/verycareful/kern", fig: "phone" },
+    ],
+  },
+  {
+    name: "Terramax",
+    sub: "Minecraft worlds at continental scale",
+    desc: "Terramax is a Fabric mod for Minecraft 26.2 with its own world generator. Terrain starts from simulated tectonic plates: centres scattered by Poisson disk sampling, cells resolved as a Voronoi diagram, and relief driven by what happens at each boundary, with plates about 100,000 blocks apart. Biomes then follow plate type, elevation and erosion instead of climate noise. realworld came first and is much smaller. It keeps vanilla's generator and lowers the octave of the four noises behind Large Biomes, so biomes run at 16x vanilla instead of 4x. It is released for 26.2 and 1.21.",
     cat: "Systems",
-    status: "active",
-    diagram: "mad",
-    repo: "github.com/verycareful/MAD",
-  },
-  {
-    name: "uc-quantum",
-    sub: "Factorial quantum study of Unit Commitment in power systems",
-    desc: "Factorial benchmark of 42 MA-QAOA variants against the Unit Commitment problem, covering state preparation, parameter initialisation, training schedule and symmetry reduction. Merit-order state preparation wins at tight budgets and breaks under most pairings, which is the result the paper is built around. Preprint under review at Quantum Machine Intelligence.",
-    stack: ["C++23", "Python", "Qiskit", "lindblad v2.3.2"],
-    cat: "Quantum",
-    status: "complete",
-    diagram: "qaoa",
-    repo: "github.com/verycareful/uc-quantum",
-    doi: "doi.org/10.21203/rs.3.rs-9533781/v1",
+    members: [
+      { name: "Terramax",  role: "World generator from a tectonic plate model", stack: "Java 25 · Fabric · Gradle", status: "active",     repo: "github.com/verycareful/Terramax", fig: "plates" },
+      { name: "realworld", role: "Large Biomes at 16x, for 26.2 and 1.21",      stack: "Java · Fabric",             status: "maintained", repo: "github.com/verycareful/realworld", fig: "biomes" },
+    ],
   },
 ];
 
 export const INDEX: IndexProject[] = [
   { name: "lindblad",                 cat: "Quantum",      status: "active",         year: "2026", stack: "C++23 · CMake · Eigen",      repo: "github.com/verycareful/lindblad" },
+  { name: "FLOP",                     cat: "Systems",      status: "active",         year: "2026", stack: "C++23 · CMake",              repo: "github.com/verycareful/FLOP" },
+  { name: "autonne",                  cat: "Systems",      status: "active",         year: "2026", stack: "C++ · CMake",                repo: "github.com/shek014/autonne",    attr: "shek014, zParik" },
+  { name: "uc-quantum",               cat: "Quantum",      status: "accepted",       year: "2026", stack: "C++23 · lindblad · NLopt",   repo: null,                              doi: "doi.org/10.21203/rs.3.rs-9533781/v1" },
+  { name: "lindblad-site",            cat: "Web",          status: "active",         year: "2026", stack: "React · TypeScript",         repo: "github.com/verycareful/lindblad-site" },
   { name: "Terramax",                 cat: "Systems",      status: "active",         year: "2026", stack: "Java · Fabric · Gradle",     repo: "github.com/verycareful/Terramax" },
-  { name: "kern",                     cat: "Privacy",      status: "active",         year: "2026", stack: "Kotlin · Compose · MuPDF",   repo: "github.com/verycareful/kern" },
+  { name: "realworld",                cat: "Systems",      status: "maintained",     year: "2026", stack: "Java · Fabric",              repo: "github.com/verycareful/realworld" },
+  { name: "kern - android",           cat: "Privacy",      status: "active",         year: "2026", stack: "Kotlin · Compose · MuPDF",   repo: "github.com/verycareful/kern" },
+  { name: "kernkraft",                cat: "Privacy",      status: "active",         year: "2026", stack: "Rust · MuPDF",               repo: "github.com/verycareful/kernkraft" },
+  { name: "kern - desktop",           cat: "Privacy",      status: "early development", year: "2026", stack: "Rust · Tauri · TypeScript", repo: "github.com/verycareful/kern-desktop" },
   { name: "MAD Optimizer",            cat: "Systems",      status: "active",         year: "2026", stack: "C++17 · CMake · Python",     repo: "github.com/verycareful/MAD" },
-  { name: "Qyra",                     cat: "Privacy",      status: "active",         year: "2026", stack: "Rust · JNI · MuPDF",         repo: "github.com/verycareful/Qyra",       attr: "fork of zParik" },
+  { name: "dotfiles",                 cat: "Systems",      status: "active",         year: "2026", stack: "Hyprland · QML · Shell",     repo: "github.com/verycareful/dotfiles" },
   { name: "KuralAI",                  cat: "Systems",      status: "paused",         year: "2026", stack: "Python · Docker",            repo: "github.com/verycareful/KuralAI" },
   { name: "Folio",                    cat: "Web",          status: "paused",         year: "2026", stack: "Next.js · TS · Supabase",    repo: null },
   { name: "ResearchSync",             cat: "Multiplatform",status: "on hold",        year: "2025", stack: "C# · MAUI · SQLite",         repo: null },
   { name: "EnergyGridOptimisation",   cat: "Quantum",      status: "on hold",        year: "2026", stack: "Python · Qiskit · MA-QAOA",  repo: null },
   { name: "Quantum K-Means",          cat: "Quantum",      status: "published",      year: "2025", stack: "Python · Qiskit",            repo: "github.com/verycareful/QKM",        doi: "doi.org/10.5281/zenodo.18802705" },
+  { name: "Gate Set Characterisation", cat: "Quantum",     status: "archived",       year: "2026", stack: "C++23 · Python · lindblad",  repo: null },
   { name: "Industrial Defect Classifier", cat: "Systems",  status: "archived",       year: "2025", stack: "PyTorch · ROCm",             repo: null },
   { name: "Stellar Blitz",            cat: "Systems",      status: "archived",       year: "2026", stack: "Unity 6 · C# · URP",         repo: "github.com/verycareful/ARVR-project" },
+  { name: "TrustNote AI",             cat: "Systems",      status: "archived",       year: "2026", stack: "Python · MobileNetV3",       repo: "github.com/verycareful/trustnote-ai", attr: "fork of 11saishiva" },
+  { name: "ProjectXero",              cat: "Privacy",      status: "archived",       year: "2026", stack: "JavaScript · Python",        repo: null },
+  { name: "RepHelper",                cat: "Multiplatform",status: "archived",       year: "2026", stack: "C# · MAUI",                  repo: null },
   { name: "StEAM (Android)",          cat: "Multiplatform",status: "archived",       year: "2025", stack: "Kotlin · Compose · ML Kit",  repo: null },
   { name: "StEAM (.NET MAUI)",        cat: "Multiplatform",status: "archived",       year: "2024", stack: "C# · MAUI · NFC",            repo: "github.com/verycareful/StEAM_cs" },
   { name: "MapStrategyGame",          cat: "Systems",      status: "archived",       year: "2025", stack: "C# · Avalonia · SkiaSharp",  repo: null },
@@ -144,84 +155,45 @@ export const INDEX: IndexProject[] = [
   { name: "Smart Doorbell Alert",     cat: "IoT",          status: "complete",       year: "2024", stack: "ESP8266 · Arduino",          repo: null },
 ];
 
+/**
+ * Current entries only. Retired entries live in docs/notebook-archive.md,
+ * which is not rendered.
+ */
 export const NOTEBOOK: NotebookEntry[] = [
   {
-    date: "May 2026", tag: "ENGINEERING",
-    title: "AI replaces coders. It won't replace engineers.",
-    body: "Coding turns a known solution into syntax. Engineering works out what the solution should be, against requirements that contradict each other and tradeoffs nobody wrote down. Models handle the first job now. I only got better at the second one by shipping things that broke.",
+    date: "Oct 2026", tag: "QUANTUM",
+    title: "Writing COBYLA and Nelder-Mead from the papers",
+    body: "FLOP is the optimizer library lindblad's variational algorithms call, and every algorithm in it is written from the original paper: Powell for COBYLA, Lagarias, Reeds, Wright and Wright for Nelder-Mead. Each one shipped first and got its full test suite one release later. COBYLA's suite found two problems. Nelder-Mead's found seven.",
   },
   {
-    date: "Apr 2026", tag: "ACADEMIC",
-    title: "Fast-track semester 7: best or worst decision",
-    body: "Compressing a semester changes how the material lands. Some of it clicks faster under pressure than it would have otherwise. The rest never settles, because there is no gap left for it to settle into. Ask me in December which half won.",
+    date: "Oct 2026", tag: "QUANTUM",
+    title: "An SVD that changed with the heap layout",
+    body: "autonne's divide-and-conquer SVD returned different output for the same matrix depending on where the heap put things, but only when GCC built it for an FMA target. lindblad's MPS backend splits every bond with it, so a run could not reproduce itself. The report went upstream as autonne issue #20, and lindblad 1.1.31.3 shipped with reproducible factorisations.",
   },
   {
-    date: "Mar 2026", tag: "QUANTUM",
-    title: "lindblad exists because I hit the Qiskit wall",
-    body: "I needed more qubits than my workflow would give me, so I started writing my own simulator. lindblad now feeds the MA-QAOA energy-grid work. Owning the backend changes which experiments I can run at all, not just how fast they finish.",
+    date: "Oct 2026", tag: "PRIVACY",
+    title: "No network code, enforced by the build",
+    body: "kernkraft has a rule a privacy policy cannot give you: no crate in it may depend on an HTTP client, a socket library or an async runtime. cargo deny fails the build if one appears, so the rule covers dependencies of dependencies too, not just the crates I remember to check.",
   },
   {
-    date: "Mar 2026", tag: "QUANTUM",
-    title: "Barren plateaus are terrifying",
-    body: "The deeper the QAOA circuit, the flatter the gradient landscape gets. Layerwise Freezing helps. I doubt it survives at scale. Re-reading Cerezo et al. this week to find out where it breaks.",
-  },
-  {
-    date: "Mar 2026", tag: "PRIVACY",
-    title: "NotBigBrother might matter",
-    body: "Most age-verification systems are surveillance pipelines wearing a legal cover story. Chaum blind signatures split the identity check from the activity log, so the issuer and the site each learn one half and neither learns you. The cryptography holds up fine. Convincing a regulator to require it is the part I have no idea how to do.",
-  },
-  {
-    date: "Feb 2026", tag: "ML",
-    title: "ResNet-50 beat EfficientNet on defect classification",
-    body: "EfficientNet is meant to be the parameter-efficient one, and it lost: ResNet-50 on GPU hit 89.03% against EfficientNet-B0's 84.95%. My guess is the skip connections carry low-level texture through the network, and a surface defect is mostly texture.",
-  },
-  {
-    date: "Jan 2026", tag: "SYSTEMS",
-    title: "NFC + Camera on Android is a nightmare",
-    body: "On Samsung devices, CameraService suppresses NFC polling while a CameraCaptureSession is open. Three days to find that. The fix was a custom MauiCameraViewHandler that waits on CAMERA_STATE_CLOSED before it re-enables polling.",
-  },
-  {
-    date: "Mar 2026", tag: "SYSTEMS",
-    title: "A real process changes how the build feels",
-    body: "ResearchSync is the first project where I followed a structured SDLC instead of improvising as I went. The build was calmer. When something broke two increments later I could find it, because I had written down why the thing existed in the first place.",
+    date: "Sep 2026", tag: "SYSTEMS",
+    title: "Testing terrain at 100,000-block scale",
+    body: "Terramax puts tectonic plates about 100,000 blocks apart. Checking one plate boundary in-game means flying there after every change. So the terrain maths is moving into a core module with no Minecraft dependency, and a standalone simulator renders it instead.",
   },
 ];
 
 export const CURRENTLY: Currently[] = [
-  { k: "Working on", v: "kern's pptx editor, and tectonic terrain in Terramax" },
-  { k: "Waiting on", v: "uc-quantum round 2 review. Revisions take priority over everything when they arrive" },
-  { k: "Reading",    v: "Vaswani et al. · Attention Is All You Need (2017)" },
+  { k: "Working on", v: "the statevector simulator optimiser in lindblad, and kern - desktop" },
+  { k: "Waiting on", v: "uc-quantum's typesetting and final publication in Quantum Machine Intelligence" },
   { k: "Located",    v: "Chennai, India · SRM IST Vadapalani" },
 ];
 
-/**
- * Planned work, four weeks ahead. Hand-written and deliberately short.
- * The generated half of the roadmap lives in activity.json and is not
- * edited here. If a planned week did not happen, leave it: the contrast
- * between this and the activity chart is the point.
- */
-export const ROADMAP: RoadmapWeek[] = [
-  {
-    start: "2026-09-07", label: "Sep 7",
-    projects: ["kern", "Terramax"],
-    note: "pptx editor work in flight; terrain redesign slice 1",
-  },
-  {
-    start: "2026-09-14", label: "Sep 14",
-    projects: ["lindblad", "autonne"],
-  },
-  {
-    start: "2026-09-21", label: "Sep 21",
-    projects: ["MAD", "kern"],
-  },
-  {
-    start: "2026-09-28", label: "Sep 28",
-    projects: ["lindblad", "autonne"],
-    note: "optimizer measurement work, lindblad#101, if scheduled",
-  },
-];
-
 export const CERTS: Cert[] = [
+  { n: "Vector Search Fundamentals",                              i: "MongoDB",                          d: "Jul 2026",  l: "https://drive.google.com/file/d/1yaeH8mndZ5FHcerKaN-CH01A5MdXs_hr/view" },
+  { n: "RAG with MongoDB",                                        i: "MongoDB",                          d: "Jul 2026",  l: "https://drive.google.com/file/d/1XUlzHa6uLdEqwcg7_VXfIZ4K27WJC1py/view" },
+  { n: "Fundamentals of Data Transformation",                     i: "MongoDB",                          d: "Jul 2026",  l: "https://drive.google.com/file/d/1RFYrH8PXl1j_c6C4Uc8VE2fHqjo4iPXz/view" },
+  { n: "Deep Learning for Computer Vision",                       i: "Coursera · UCB",                   d: "Jul 2026",  l: "https://coursera.org/verify/FENDXPVUPCNZ" },
+  { n: "Quantum Computing with Qiskit and Advanced Algorithms",   i: "Coursera · Packt",                 d: "Jul 2026",  l: "https://coursera.org/verify/67GIBDE61D0M" },
   { n: "Quantum Mechanics",                                       i: "Coursera · UCB",                   d: "May 2026",  l: "https://www.coursera.org/account/accomplishments/verify/PW9GW8GSMMXC" },
   { n: "General Formulation of Quantum Information",              i: "IBM",                               d: "Apr 2026",  l: "https://www.credly.com/badges/5b720628-6057-493e-8f30-9314cf0ce09e/print" },
   { n: "Introduction to Natural Language Processing",             i: "upGrad",                            d: "Apr 2026",  l: "https://certificates.upgrad.com/98a38fac-a8ae-4ce7-a94d-32e7d9bd2272-Free%20Course%20Completion-agXWCOQOTxx4Zpw5.jpeg" },
@@ -231,9 +203,9 @@ export const CERTS: Cert[] = [
   { n: "Compiler Design",                                         i: "Academy Europe Open University",   d: "Mar 2026",  l: "https://drive.google.com/file/d/1xAenCFPP1JaYA5BJq596fproeKSSpmn_/view" },
   { n: "Data Processing and Visualisation",                       i: "FutureSkills Prime",               d: "Mar 2026",  l: "https://drive.google.com/file/d/1jZHOxT3QJm9IdYzG26GmYkibSUxQ6I9w/view" },
   { n: "Data Science for Beginners",                              i: "FutureSkills Prime",               d: "Mar 2026",  l: "https://drive.google.com/file/d/1yCu5k21svcWAty0LbfnB4OndKPV3wAZ6/view" },
-  { n: "Software Engineering Fundamentals — Software Development and Testing", i: "Infosys Springboard", d: "Feb 2026",  l: "https://drive.google.com/file/d/1X2zjpxU6hRQTCNhEUoNqg-3TxUiepVt9/view" },
+  { n: "Software Engineering Fundamentals: Software Development and Testing", i: "Infosys Springboard", d: "Feb 2026",  l: "https://drive.google.com/file/d/1X2zjpxU6hRQTCNhEUoNqg-3TxUiepVt9/view" },
   { n: "Certificate Program in Artificial Intelligence & Machine Learning",    i: "FutureSkills Prime",  d: "Nov 2025",  l: "https://inspiration-fun-7467.my.salesforce-sites.com/CDACcertificatePage2?id=a02Vy00000bZPKnIAO" },
-  { n: "Quantum Computing For Everyone — An Introduction",        i: "Coursera · Fractal Analytics",     d: "Oct 2025",  l: "https://coursera.org/share/922ae472bc13700c3d510c2766cf8c5b" },
+  { n: "Quantum Computing For Everyone: An Introduction",        i: "Coursera · Fractal Analytics",     d: "Oct 2025",  l: "https://coursera.org/share/922ae472bc13700c3d510c2766cf8c5b" },
   { n: "Demystifying Networking",                                 i: "NPTEL",                            d: "Aug 2025",  l: "https://archive.nptel.ac.in/content/noc/NOC25/SEM2/Ecertificates/106/noc25-cs125/Course/NPTEL25CS125S63320257809160762.pdf" },
   { n: "Introduction to MongoDB",                                 i: "MongoDB",                          d: "Jun 2025",  l: "https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/b595aee2-c89a-422b-b949-fe9f7524ef27-sricharan-s-ra2311003040063-5111c2b0-5dbe-40a1-96e2-a12b3464f351-certificate.pdf" },
   { n: "MongoDB Basics for Students",                             i: "MongoDB",                          d: "Jun 2025",  l: "https://learn.mongodb.com/c/Z4QkuWhARMmEZMc87MHVnA" },
@@ -243,7 +215,7 @@ export const CERTS: Cert[] = [
   { n: "Linux for Beginners",                                     i: "Infosys Springboard",              d: "Oct 2024",  l: "https://drive.google.com/file/d/1au8_vOzPZu2cqvNGTh5WfxIUewZbd-FQ/view" },
   { n: "Introduction to Unix",                                    i: "Infosys Springboard",              d: "Oct 2024",  l: "https://drive.google.com/file/d/1rUeplMCUXIorZ7e-bADZKy60G_Fqf5hY/view" },
   { n: "Programming, Data Structures and Algorithms using Python", i: "NPTEL",                           d: "Sep 2024",  l: "https://archive.nptel.ac.in/content/noc/NOC24/SEM2/Ecertificates/106/noc24-cs78/Course/NPTEL24CS78S33310953202760773.pdf" },
-  { n: "Design Thinking — A Primer",                             i: "NPTEL",                             d: "Aug 2024",  l: "https://archive.nptel.ac.in/content/noc/NOC24/SEM2/Ecertificates/110/noc24-mg72/Course/NPTEL24MG72S43310970802760773.pdf" },
+  { n: "Design Thinking: A Primer",                             i: "NPTEL",                             d: "Aug 2024",  l: "https://archive.nptel.ac.in/content/noc/NOC24/SEM2/Ecertificates/110/noc24-mg72/Course/NPTEL24MG72S43310970802760773.pdf" },
   { n: "C for Beginners",                                         i: "Great Learning",                   d: null,        l: "https://www.mygreatlearning.com/certificate/GOUOKTCJ" },
 ];
 

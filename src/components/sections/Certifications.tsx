@@ -56,7 +56,7 @@ export default function Certifications() {
                   verify <span className="arr">↗</span>
                 </a>
               ) : (
-                <span className="mono" style={{ fontSize: 10.5, color: "var(--ink-4)" }}>—</span>
+                <span className="mono" style={{ fontSize: 10.5, color: "var(--ink-4)" }}>–</span>
               )}
             </div>
           ))}

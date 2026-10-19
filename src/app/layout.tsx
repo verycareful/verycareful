@@ -27,9 +27,9 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Sricharan Suresh — Quantum Engineer",
+  title: "Sricharan Suresh · Quantum Engineer",
   description:
-    "Computer Science undergraduate specialising in Quantum Computing. I work at the intersection of research and production software — Ising/QUBO optimisation, quantum K-means, and cross-platform campus systems.",
+    "Computer Science undergraduate specialising in Quantum Computing. I build a C++23 quantum computing stack and the research that runs on it, document tools that never touch the network, and Minecraft worlds generated from tectonic plates.",
   keywords: [
     "Quantum Computing",
     "QAOA",

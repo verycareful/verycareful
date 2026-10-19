@@ -105,7 +105,7 @@ export default function MAbout() {
       <div className="m-section-marker">
         <span className="roman">§ I</span>
         <span className="title">About / Hypothesis</span>
-        <span className="meta">fig. 1.0 — 1.4</span>
+        <span className="meta">fig. 1.0 – 1.4</span>
       </div>
 
       {/* Abstract */}

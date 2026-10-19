@@ -22,7 +22,7 @@ export default function LabNotebook() {
             gap: 56,
           }}
         >
-          {/* Left — patent reference. Currently moved to the Roadmap section. */}
+          {/* Left: patent reference. Currently moved to the Roadmap section. */}
           <div>
             {/* Patent compact reference card */}
             <div
@@ -40,7 +40,7 @@ export default function LabNotebook() {
             </div>
           </div>
 
-          {/* Right — Field journal */}
+          {/* Right: Field journal */}
           <div>
             <div className="label" style={{ marginBottom: 14 }}>↳ FIELD JOURNAL</div>
             <div style={{ borderTop: "1px solid var(--ink)" }}>

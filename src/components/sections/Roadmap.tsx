@@ -1,6 +1,6 @@
 "use client";
 
-import { CURRENTLY, ROADMAP } from "@/lib/data";
+import { CURRENTLY } from "@/lib/data";
 import activityJson from "@/lib/activity.json";
 import type { ActivitySnapshot } from "@/lib/types";
 
@@ -18,7 +18,6 @@ function cellStyle(count: number, max: number): React.CSSProperties {
 
 export default function Roadmap() {
   const C = CURRENTLY;
-  const R = ROADMAP;
   const A = activity;
 
   const max = Math.max(1, ...A.repos.flatMap((r) => r.weeks));
@@ -29,101 +28,36 @@ export default function Roadmap() {
       <div className="frame">
         <div className="section-marker">
           <span className="roman">§ IV</span>
-          <span className="title">Roadmap / Plan and Record</span>
-          <span className="meta">plan written by hand · record generated weekly</span>
+          <span className="title">Roadmap / Currently and Record</span>
+          <span className="meta">status written by hand · record generated weekly</span>
         </div>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "minmax(0, 4fr) minmax(0, 8fr)",
-            gap: 56,
-          }}
-        >
-          {/* Left — Currently */}
-          <div>
-            <div className="label" style={{ marginBottom: 14 }}>↳ CURRENTLY</div>
-            <div style={{ borderTop: "1px solid var(--ink)" }}>
-              {C.map((it, i) => (
-                <div key={i} style={{ padding: "16px 0", borderBottom: "1px solid var(--rule)" }}>
-                  <div
-                    className="mono"
-                    style={{ fontSize: 10.5, color: "var(--ink-3)", letterSpacing: "0.08em", marginBottom: 6 }}
-                  >
-                    {it.k.toUpperCase()}
-                  </div>
-                  <div style={{ fontSize: 14.5, lineHeight: 1.5, color: "var(--ink)" }}>{it.v}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right — Planned weeks */}
-          <div>
-            <div className="label" style={{ marginBottom: 14 }}>↳ PLANNED · NEXT FOUR WEEKS</div>
-            <div style={{ borderTop: "1px solid var(--ink)" }}>
-              {R.map((w) => (
+        {/* Currently */}
+        <div>
+          <div className="label" style={{ marginBottom: 14 }}>↳ CURRENTLY</div>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+              columnGap: 56,
+              borderTop: "1px solid var(--ink)",
+            }}
+          >
+            {C.map((it, i) => (
+              <div key={i} style={{ padding: "16px 0", borderBottom: "1px solid var(--rule)" }}>
                 <div
-                  key={w.start}
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "88px 1fr",
-                    gap: 24,
-                    padding: "18px 0",
-                    borderBottom: "1px solid var(--rule)",
-                  }}
+                  className="mono"
+                  style={{ fontSize: 10.5, color: "var(--ink-3)", letterSpacing: "0.08em", marginBottom: 6 }}
                 >
-                  <div
-                    className="mono"
-                    style={{ fontSize: 11, color: "var(--ink)", letterSpacing: "0.06em", paddingTop: 2 }}
-                  >
-                    {w.label}
-                  </div>
-                  <div>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                      {w.projects.length === 0 ? (
-                        <span style={{ fontSize: 14, color: "var(--ink-3)" }}>unallocated</span>
-                      ) : (
-                        w.projects.map((p) => (
-                          <span
-                            key={p}
-                            className="mono"
-                            style={{
-                              fontSize: 11.5,
-                              padding: "4px 10px",
-                              border: "1px solid var(--rule)",
-                              background: "var(--bg-2)",
-                              color: "var(--ink)",
-                            }}
-                          >
-                            {p}
-                          </span>
-                        ))
-                      )}
-                    </div>
-                    {w.note && (
-                      <p
-                        className="italic-serif"
-                        style={{ fontSize: 13.5, lineHeight: 1.5, color: "var(--ink-2)", margin: "10px 0 0" }}
-                      >
-                        {w.note}
-                      </p>
-                    )}
-                  </div>
+                  {it.k.toUpperCase()}
                 </div>
-              ))}
-            </div>
-            <p
-              className="italic-serif"
-              style={{ fontSize: 13, lineHeight: 1.55, color: "var(--ink-3)", margin: "16px 0 0" }}
-            >
-              I write this half by hand. The chart below counts commits, so when a week
-              here did not happen, you can see the gap.
-            </p>
+                <div style={{ fontSize: 14.5, lineHeight: 1.5, color: "var(--ink)" }}>{it.v}</div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Record — generated activity */}
+        {/* Record: generated activity */}
         <div style={{ marginTop: 56 }}>
           <div className="label" style={{ marginBottom: 14 }}>↳ RECORD · COMMITS PER WEEK</div>
 

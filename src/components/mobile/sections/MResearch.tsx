@@ -3,7 +3,7 @@
 import { RESEARCH } from "@/lib/data";
 
 function StatusDot({ s }: { s: string }) {
-  const active = ["live", "active", "complete", "published"].includes(s);
+  const active = ["live", "active", "complete", "published", "accepted"].includes(s);
   const warm   = ["wip", "research", "review", "in progress", "under review", "seeking venue"].includes(s);
   const cls = active ? "dot dot-active" : warm ? "dot dot-warm" : "dot dot-cool";
   return <span className={cls} />;
@@ -59,14 +59,20 @@ export default function MResearch() {
                   </a>
                 ) : r.venue}
               </div>
-              <a
-                href={`https://${r.repo}`}
-                target="_blank"
-                rel="noreferrer"
-                className="ghost-link"
-              >
-                {r.repo} <span className="arr">→</span>
-              </a>
+              {r.repo ? (
+                <a
+                  href={`https://${r.repo}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="ghost-link"
+                >
+                  {r.repo} <span className="arr">→</span>
+                </a>
+              ) : (
+                <span className="mono" style={{ fontSize: 11, color: "var(--ink-4)", letterSpacing: "0.06em" }}>
+                  repository · private
+                </span>
+              )}
             </div>
           </article>
         ))}

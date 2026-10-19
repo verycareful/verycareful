@@ -121,7 +121,7 @@ export default function About() {
         <div className="section-marker">
           <span className="roman">§ I</span>
           <span className="title">About / Hypothesis</span>
-          <span className="meta">fig. 1.0 — 1.4</span>
+          <span className="meta">fig. 1.0 – 1.4</span>
         </div>
 
         <div
@@ -131,7 +131,7 @@ export default function About() {
             gap: 56,
           }}
         >
-          {/* Left — abstract */}
+          {/* Left: abstract */}
           <div>
             <div className="label" style={{ marginBottom: 14 }}>↳ ABSTRACT</div>
             <p
@@ -152,7 +152,7 @@ export default function About() {
             </p>
           </div>
 
-          {/* Right — stats + education + affiliations */}
+          {/* Right: stats + education + affiliations */}
           <div>
             {/* Stats grid */}
             <div
