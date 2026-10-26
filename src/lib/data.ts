@@ -183,7 +183,8 @@ export const NOTEBOOK: NotebookEntry[] = [
 ];
 
 export const CURRENTLY: Currently[] = [
-  { k: "Working on", v: "the statevector simulator optimiser in lindblad, and kern - desktop" },
+  { k: "Working on", v: "the statevector simulator optimiser in lindblad" },
+  { k: "Building",   v: "kern - desktop as the system's default file manager, with clipboard and drag-and-drop that work with other apps" },
   { k: "Located",    v: "Chennai, India · SRM IST Vadapalani" },
 ];
 
