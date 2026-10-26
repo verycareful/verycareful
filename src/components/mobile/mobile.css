@@ -231,21 +231,30 @@
 .currently-v { font-size: 14px; line-height: 1.5; color: var(--ink); }
 
 /* ── Roadmap: generated record ───────────────────────────── */
+/* One line per repo: name, strip, total. The axis reuses the columns so its
+   dates sit under the strip rather than under the names. */
 .rec-list { border-top: 1px solid var(--ink); }
-.rec-row  { padding: 12px 0; border-bottom: 1px solid var(--rule-soft); }
-.rec-head {
-  display: flex; align-items: baseline; justify-content: space-between;
-  gap: 12px; margin-bottom: 7px;
+.rec-row, .rec-axis {
+  display: grid; grid-template-columns: 96px minmax(0, 1fr) 28px;
+  gap: 10px; align-items: center;
 }
-.rec-repo  { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink); }
-.rec-total { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-2); }
-.rec-strip { display: grid; grid-template-columns: repeat(8, 1fr); gap: 3px; }
-.rec-cell  { height: 16px; }
+.rec-row  { padding: 9px 0; border-bottom: 1px solid var(--rule-soft); }
+.rec-repo {
+  font-family: var(--font-mono); font-size: 11px; color: var(--ink);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.rec-total {
+  font-family: var(--font-mono); font-size: 11px; color: var(--ink-2);
+  text-align: right; font-variant-numeric: tabular-nums;
+}
+.rec-strip { display: grid; grid-template-columns: repeat(8, 1fr); gap: 2px; }
+.rec-cell  { height: 12px; }
 .rec-axis {
-  display: flex; justify-content: space-between; margin-top: 8px;
+  margin-top: 8px;
   font-family: var(--font-mono); font-size: 9.5px; color: var(--ink-3);
   letter-spacing: 0.04em;
 }
+.rec-axis-dates { grid-column: 2; display: flex; justify-content: space-between; }
 .rec-foot {
   font-family: var(--font-mono); font-size: 10px; color: var(--ink-3);
   letter-spacing: 0.04em; line-height: 1.5; margin: 12px 0 0;

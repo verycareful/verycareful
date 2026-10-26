@@ -19,7 +19,7 @@ export const HERO: Hero = {
   status: [
     { k: "READING",  v: "Batsambuu Batbold and Lori Ziegelmeier. From Chaos to Continents: Voronoi-Based Procedural Terrain Generation with Hydrology and 3D Visualization (Media Exposition)" },
     { k: "BUILDING", v: "My own Hyprland configuration" },
-    { k: "IN PRESS", v: "Merit-Order State Preparation for Budget-Efficient MA-QAOA (Quantum Machine Intelligence)" },
+    { k: "PUBLISHED", v: "Merit-Order State Preparation for Budget-Efficient MA-QAOA (Quantum Machine Intelligence 8(2), 117)" },
   ],
 };
 
@@ -28,7 +28,7 @@ export const ABOUT: About = {
   stats: [
     { v: "9.40/10",  k: "B.Tech CSE · CGPA" },
     { v: "10.00/10", k: "Quantum (Hons) · CGPA" },
-    { v: "3",        k: "Papers (1 published, 1 in press)" },
+    { v: "3",        k: "Papers (2 published)" },
     { v: "15+",      k: "Public repositories" },
   ],
   edu: [
@@ -47,9 +47,9 @@ export const RESEARCH: Research[] = [
     n: "01",
     title: "Merit-Order State Preparation for Budget-Efficient MA-QAOA: A Factorial Study of Initialisation, Training, and Noise Resilience in Power Systems Unit Commitment",
     period: "Jan 2026 – May 2026",
-    status: "accepted",
-    venue: "Quantum Machine Intelligence (Springer Nature) · accepted, awaiting typesetting · preprint DOI 10.21203/rs.3.rs-9533781/v1",
-    doi: "doi.org/10.21203/rs.3.rs-9533781/v1",
+    status: "published",
+    venue: "Quantum Machine Intelligence 8(2), 117 (2026) · Springer Nature · DOI 10.1007/s42484-026-00465-7",
+    doi: "doi.org/10.1007/s42484-026-00465-7",
     stack: ["C++23", "lindblad", "NLopt", "Eigen", "QAOA"],
     summary:
       "Factorial benchmark of 42 MA-QAOA variants across three budget tiers and two problem sizes, applied to Unit Commitment in power systems. The contributions are merit-order state preparation, physics-informed and inverse mixer weights, power orbits, and layerwise-progressive training. Merit-order preparation reaches 98.5% success at 50 circuit evaluations, then falls to between 22 and 40% the moment you pair it with any other parameter initialisation.",
@@ -93,7 +93,7 @@ export const CLUSTERS: Cluster[] = [
       { name: "lindblad",   role: "Simulators, transpiler and algorithms",                       stack: "C++23 · Eigen · OpenMP · pybind11", status: "active",   repo: "github.com/verycareful/lindblad", site: "verycareful.github.io/lindblad-site/", fig: "circuit" },
       { name: "FLOP",       role: "Derivative-free optimizers: COBYLA and Nelder-Mead",          stack: "C++23 · CMake",                     status: "active",   repo: "github.com/verycareful/FLOP", fig: "simplex" },
       { name: "autonne",    role: "Truncated SVD and Hermitian eigensolver for small matrices",  stack: "C++ · CMake",                       status: "active",   repo: "github.com/shek014/autonne", attr: "shek014, zParik", fig: "spectrum" },
-      { name: "uc-quantum", role: "MA-QAOA for Unit Commitment, accepted at Quantum Machine Intelligence", stack: "C++23 · lindblad · NLopt", status: "accepted", repo: null, doi: "doi.org/10.21203/rs.3.rs-9533781/v1", fig: "landscape" },
+      { name: "uc-quantum", role: "MA-QAOA for Unit Commitment, published in Quantum Machine Intelligence", stack: "C++23 · lindblad · NLopt", status: "published", repo: null, doi: "doi.org/10.1007/s42484-026-00465-7", fig: "landscape" },
     ],
   },
   {
@@ -123,7 +123,7 @@ export const INDEX: IndexProject[] = [
   { name: "lindblad",                 cat: "Quantum",      status: "active",         year: "2026", stack: "C++23 · CMake · Eigen",      repo: "github.com/verycareful/lindblad" },
   { name: "FLOP",                     cat: "Systems",      status: "active",         year: "2026", stack: "C++23 · CMake",              repo: "github.com/verycareful/FLOP" },
   { name: "autonne",                  cat: "Systems",      status: "active",         year: "2026", stack: "C++ · CMake",                repo: "github.com/shek014/autonne",    attr: "shek014, zParik" },
-  { name: "uc-quantum",               cat: "Quantum",      status: "accepted",       year: "2026", stack: "C++23 · lindblad · NLopt",   repo: null,                              doi: "doi.org/10.21203/rs.3.rs-9533781/v1" },
+  { name: "uc-quantum",               cat: "Quantum",      status: "published",      year: "2026", stack: "C++23 · lindblad · NLopt",   repo: null,                              doi: "doi.org/10.1007/s42484-026-00465-7" },
   { name: "lindblad-site",            cat: "Web",          status: "active",         year: "2026", stack: "React · TypeScript",         repo: "github.com/verycareful/lindblad-site" },
   { name: "Terramax",                 cat: "Systems",      status: "active",         year: "2026", stack: "Java · Fabric · Gradle",     repo: "github.com/verycareful/Terramax" },
   { name: "realworld",                cat: "Systems",      status: "maintained",     year: "2026", stack: "Java · Fabric",              repo: "github.com/verycareful/realworld" },
@@ -184,7 +184,6 @@ export const NOTEBOOK: NotebookEntry[] = [
 
 export const CURRENTLY: Currently[] = [
   { k: "Working on", v: "the statevector simulator optimiser in lindblad, and kern - desktop" },
-  { k: "Waiting on", v: "uc-quantum's typesetting and final publication in Quantum Machine Intelligence" },
   { k: "Located",    v: "Chennai, India · SRM IST Vadapalani" },
 ];
 

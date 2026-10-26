@@ -20,7 +20,7 @@ export default function MRoadmap() {
   const generated = new Date(A.generated).toISOString().slice(0, 10);
 
   return (
-    <section id="roadmap" className="reveal">
+    <section id="roadmap" className="m-sec reveal">
       <div className="m-section-marker">
         <span className="roman">§ IV</span>
         <span className="title">Roadmap / Currently and Record</span>
@@ -44,10 +44,7 @@ export default function MRoadmap() {
         <div className="rec-list">
           {A.repos.map((r) => (
             <div key={r.repo} className="rec-row">
-              <div className="rec-head">
-                <span className="rec-repo">{r.repo}</span>
-                <span className="rec-total">{r.total}</span>
-              </div>
+              <span className="rec-repo">{r.repo}</span>
               <div className="rec-strip">
                 {r.weeks.map((n, i) => (
                   <div
@@ -58,12 +55,15 @@ export default function MRoadmap() {
                   />
                 ))}
               </div>
+              <span className="rec-total">{r.total}</span>
             </div>
           ))}
         </div>
         <div className="rec-axis">
-          <span>{A.weeks[0]}</span>
-          <span>{A.weeks[A.weeks.length - 1]}</span>
+          <span className="rec-axis-dates">
+            <span>{A.weeks[0]}</span>
+            <span>{A.weeks[A.weeks.length - 1]}</span>
+          </span>
         </div>
         <p className="rec-foot">
           public repositories only · all branches · generated {generated}

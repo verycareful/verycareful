@@ -18,7 +18,7 @@ Ising Hamiltonians, private document tools, tectonic plates.
 
 | | Title | Venue | Status |
 |--|-------|-------|--------|
-| 01 | [Merit-Order State Preparation for Budget-Efficient MA-QAOA](https://doi.org/10.21203/rs.3.rs-9533781/v1) | Quantum Machine Intelligence (Springer Nature) | Accepted, in production |
+| 01 | [Merit-Order State Preparation for Budget-Efficient MA-QAOA](https://doi.org/10.1007/s42484-026-00465-7) | Quantum Machine Intelligence 8(2), 117 (2026) | Published |
 | 02 | [Comparative Analysis of Classical and Quantum K-Means Clustering](https://doi.org/10.5281/zenodo.18802705) | Zenodo | Published |
 | 03 | Automated Industrial Surface Defect Classification System | – | Seeking venue |
 
@@ -33,7 +33,7 @@ Three clusters of repositories that build on each other. Everything else is in t
 - **[lindblad](https://github.com/verycareful/lindblad)** · The framework, and the project everything else orbits. Four simulator backends behind an AUTO selector (statevector with OpenMP, density matrix with exact Kraus channels, Clifford stabilizer tableau, MPS), device-realistic noise from T1/T2 specs, a transpiler with SABRE layout and routing and IBM heavy-hex targeting, and parameter-shift Estimator and Sampler primitives driving VQE, QAOA, MA-QAOA, Grover, Shor, QPE and QFT. OpenQASM 2/3 I/O, optional Python bindings. Source-available, benchmarked head to head against Qiskit Aer.
 - **[FLOP](https://github.com/verycareful/FLOP)** · Derivative-free optimizers in C++23, written from the published algorithms: Powell's COBYLA with inequality constraints, and Nelder-Mead. lindblad's variational algorithms call it.
 - **[autonne](https://github.com/shek014/autonne)** · Truncated SVD and Hermitian eigendecomposition for small dense complex matrices, the kernels lindblad's MPS backend splits bonds with. A joint project with [shek014](https://github.com/shek014) and [zParik](https://github.com/zParik).
-- **uc-quantum** · Factorial study of 42 MA-QAOA variants applied to Unit Commitment in power systems, run on lindblad. Merit-order state preparation reaches a 98.5% success rate at 50 circuit evaluations against 24.0% for simulated annealing, but collapses to 22 to 40% when paired with any other parameter initialisation. Accepted at Quantum Machine Intelligence; [preprint](https://doi.org/10.21203/rs.3.rs-9533781/v1).
+- **uc-quantum** · Factorial study of 42 MA-QAOA variants applied to Unit Commitment in power systems, run on lindblad. Merit-order state preparation reaches a 98.5% success rate at 50 circuit evaluations against 24.0% for simulated annealing, but collapses to 22 to 40% when paired with any other parameter initialisation. Published in [Quantum Machine Intelligence 8(2), 117 (2026)](https://doi.org/10.1007/s42484-026-00465-7).
 
 ### kern · document tools that never touch the network
 
