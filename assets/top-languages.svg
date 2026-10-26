@@ -23,17 +23,17 @@
 <rect x="24" y="52" width="7" height="7" fill="#f34b7d"/>
 <text x="36" y="61" class="lbl">C++</text>
 <rect x="144" y="50" width="534" height="9" rx="2" class="bg2"/>
-<rect x="144" y="50" width="286" height="9" rx="2" fill="#f34b7d" opacity="0.9"/>
-<text x="684" y="61" class="val">53.7%</text>
+<rect x="144" y="50" width="285" height="9" rx="2" fill="#f34b7d" opacity="0.9"/>
+<text x="684" y="61" class="val">53.5%</text>
 <rect x="24" y="86" width="7" height="7" fill="#178600"/>
 <text x="36" y="95" class="lbl">C#</text>
 <rect x="144" y="84" width="534" height="9" rx="2" class="bg2"/>
-<rect x="144" y="84" width="45" height="9" rx="2" fill="#178600" opacity="0.9"/>
+<rect x="144" y="84" width="44" height="9" rx="2" fill="#178600" opacity="0.9"/>
 <text x="684" y="95" class="val">8.4%</text>
 <rect x="24" y="120" width="7" height="7" fill="#3178c6"/>
 <text x="36" y="129" class="lbl">TypeScript</text>
 <rect x="144" y="118" width="534" height="9" rx="2" class="bg2"/>
-<rect x="144" y="118" width="41" height="9" rx="2" fill="#3178c6" opacity="0.9"/>
+<rect x="144" y="118" width="40" height="9" rx="2" fill="#3178c6" opacity="0.9"/>
 <text x="684" y="129" class="val">7.7%</text>
 <rect x="24" y="154" width="7" height="7" fill="#888888"/>
 <text x="36" y="163" class="lbl">OpenQASM</text>
@@ -43,13 +43,13 @@
 <rect x="24" y="188" width="7" height="7" fill="#3572A5"/>
 <text x="36" y="197" class="lbl">Python</text>
 <rect x="144" y="186" width="534" height="9" rx="2" class="bg2"/>
-<rect x="144" y="186" width="33" height="9" rx="2" fill="#3572A5" opacity="0.9"/>
-<text x="684" y="197" class="val">6.2%</text>
+<rect x="144" y="186" width="34" height="9" rx="2" fill="#3572A5" opacity="0.9"/>
+<text x="684" y="197" class="val">6.4%</text>
 <rect x="24" y="222" width="7" height="7" fill="#A97BFF"/>
 <text x="36" y="231" class="lbl">Kotlin</text>
 <rect x="144" y="220" width="534" height="9" rx="2" class="bg2"/>
 <rect x="144" y="220" width="23" height="9" rx="2" fill="#A97BFF" opacity="0.9"/>
-<text x="684" y="231" class="val">4.4%</text>
+<text x="684" y="231" class="val">4.3%</text>
 <rect x="24" y="256" width="7" height="7" fill="#f1e05a"/>
 <text x="36" y="265" class="lbl">JavaScript</text>
 <rect x="144" y="254" width="534" height="9" rx="2" class="bg2"/>

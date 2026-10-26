@@ -1,51 +1,56 @@
 {
-  "updated": "2026-10-19T12:30:06Z",
-  "totalBytes": 12494923,
+  "updated": "2026-10-26T12:27:55Z",
+  "totalBytes": 12545133,
   "languages": [
     {
       "name": "C++",
       "bytes": 6708400,
-      "pct": 53.69
+      "pct": 53.47
     },
     {
       "name": "C#",
       "bytes": 1054678,
-      "pct": 8.44
+      "pct": 8.41
     },
     {
       "name": "TypeScript",
-      "bytes": 962344,
-      "pct": 7.7
+      "bytes": 962336,
+      "pct": 7.67
     },
     {
       "name": "OpenQASM",
       "bytes": 875993,
-      "pct": 7.01
+      "pct": 6.98
     },
     {
       "name": "Python",
-      "bytes": 776484,
-      "pct": 6.21
+      "bytes": 800418,
+      "pct": 6.38
     },
     {
       "name": "Kotlin",
       "bytes": 544064,
-      "pct": 4.35
+      "pct": 4.34
     },
     {
       "name": "JavaScript",
       "bytes": 342756,
-      "pct": 2.74
+      "pct": 2.73
     },
     {
       "name": "Rust",
       "bytes": 289928,
-      "pct": 2.32
+      "pct": 2.31
     },
     {
       "name": "QML",
-      "bytes": 159037,
-      "pct": 1.27
+      "bytes": 177886,
+      "pct": 1.42
+    },
+    {
+      "name": "CSS",
+      "bytes": 138801,
+      "pct": 1.11
     },
     {
       "name": "Java",
@@ -53,14 +58,9 @@
       "pct": 1.07
     },
     {
-      "name": "CSS",
-      "bytes": 132446,
-      "pct": 1.06
-    },
-    {
       "name": "Shell",
-      "bytes": 131576,
-      "pct": 1.05
+      "bytes": 132359,
+      "pct": 1.06
     },
     {
       "name": "HTML",
@@ -89,8 +89,8 @@
     },
     {
       "name": "Lua",
-      "bytes": 21823,
-      "pct": 0.17
+      "bytes": 22120,
+      "pct": 0.18
     },
     {
       "name": "Wolfram Language",

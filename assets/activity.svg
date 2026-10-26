@@ -21,7 +21,7 @@
 <rect width="760" height="175" rx="6" class="bg"/>
 <rect x="0.5" y="0.5" width="759" height="174" rx="6" class="bd" stroke-width="1"/>
 <text x="24" y="28" class="ttl">↳ COMMIT ACTIVITY · last 24 months</text>
-<text x="736" y="54" class="val" font-size="9" text-anchor="end">1209 contributions total</text>
+<text x="736" y="54" class="val" font-size="9" text-anchor="end">1226 contributions total</text>
 <line x1="24" y1="137" x2="736" y2="137" class="ax" stroke-width="0.5"/>
 <rect x="24.5" y="137.0" width="27.7" height="0.0" fill="#57606a" opacity="0.3" rx="1"/>
 <text x="38.8" y="151" class="lbl" font-size="8.5" text-anchor="middle">Nov '24</text>
@@ -50,6 +50,6 @@
 <rect x="617.8" y="100.2" width="27.7" height="36.8" fill="#57606a" opacity="0.3" rx="1"/>
 <rect x="647.5" y="102.8" width="27.7" height="34.2" fill="#57606a" opacity="0.3" rx="1"/>
 <rect x="677.2" y="44.0" width="27.7" height="93.0" fill="#57606a" opacity="0.3" rx="1"/>
-<rect x="706.8" y="105.8" width="27.7" height="31.2" fill="#57606a" opacity="0.3" rx="1"/>
-<polyline points="38.8,137.0 68.5,137.0 98.2,137.0 127.8,137.0 157.5,136.8 187.2,136.7 216.8,136.7 246.5,136.7 276.2,136.7 305.8,136.7 335.5,136.7 365.2,136.5 394.8,136.5 424.5,136.5 454.2,134.4 483.8,133.2 513.5,116.7 543.2,111.5 572.8,96.7 602.5,89.7 632.2,81.1 661.8,73.1 691.5,51.3 721.2,44.0" class="cum"/>
+<rect x="706.8" y="100.2" width="27.7" height="36.8" fill="#57606a" opacity="0.3" rx="1"/>
+<polyline points="38.8,137.0 68.5,137.0 98.2,137.0 127.8,137.0 157.5,136.8 187.2,136.7 216.8,136.7 246.5,136.7 276.2,136.7 305.8,136.7 335.5,136.7 365.2,136.5 394.8,136.5 424.5,136.5 454.2,134.4 483.8,133.2 513.5,117.0 543.2,111.8 572.8,97.3 602.5,90.3 632.2,81.9 661.8,74.0 691.5,52.5 721.2,44.0" class="cum"/>
 </svg>
