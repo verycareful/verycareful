@@ -1,96 +1,96 @@
 {
-  "updated": "2026-10-26T12:27:55Z",
-  "totalBytes": 12545133,
+  "updated": "2026-11-02T15:01:36Z",
+  "totalBytes": 12903118,
   "languages": [
     {
       "name": "C++",
       "bytes": 6708400,
-      "pct": 53.47
+      "pct": 51.99
     },
     {
       "name": "C#",
       "bytes": 1054678,
-      "pct": 8.41
+      "pct": 8.17
     },
     {
       "name": "TypeScript",
       "bytes": 962336,
-      "pct": 7.67
+      "pct": 7.46
     },
     {
       "name": "OpenQASM",
       "bytes": 875993,
-      "pct": 6.98
-    },
-    {
-      "name": "Python",
-      "bytes": 800418,
-      "pct": 6.38
+      "pct": 6.79
     },
     {
       "name": "Kotlin",
-      "bytes": 544064,
-      "pct": 4.34
+      "bytes": 867742,
+      "pct": 6.73
+    },
+    {
+      "name": "Python",
+      "bytes": 800263,
+      "pct": 6.2
     },
     {
       "name": "JavaScript",
-      "bytes": 342756,
-      "pct": 2.73
+      "bytes": 349987,
+      "pct": 2.71
     },
     {
       "name": "Rust",
       "bytes": 289928,
-      "pct": 2.31
+      "pct": 2.25
     },
     {
       "name": "QML",
-      "bytes": 177886,
-      "pct": 1.42
+      "bytes": 189062,
+      "pct": 1.47
     },
     {
       "name": "CSS",
-      "bytes": 138801,
+      "bytes": 143749,
+      "pct": 1.11
+    },
+    {
+      "name": "Shell",
+      "bytes": 143059,
       "pct": 1.11
     },
     {
       "name": "Java",
       "bytes": 134181,
-      "pct": 1.07
-    },
-    {
-      "name": "Shell",
-      "bytes": 132359,
-      "pct": 1.06
+      "pct": 1.04
     },
     {
       "name": "HTML",
       "bytes": 125319,
-      "pct": 1.0
+      "pct": 0.97
     },
     {
       "name": "Jupyter Notebook",
       "bytes": 78032,
-      "pct": 0.62
+      "pct": 0.6
     },
     {
       "name": "CMake",
       "bytes": 68063,
-      "pct": 0.54
+      "pct": 0.53
     },
     {
       "name": "PLpgSQL",
       "bytes": 33755,
-      "pct": 0.27
+      "pct": 0.26
     },
     {
       "name": "TeX",
       "bytes": 33344,
-      "pct": 0.27
+      "pct": 0.26
     },
     {
       "name": "Lua",
-      "bytes": 22120,
-      "pct": 0.18
+      "bytes": 22527,
+      "pct": 0.17
     },
     {
       "name": "Wolfram Language",

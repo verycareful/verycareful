@@ -1,43 +1,29 @@
 {
-  "generated": "2026-10-26T12:28:14.309Z",
+  "generated": "2026-11-02T15:01:56.242Z",
   "weeks": [
-    "Sep 7",
     "Sep 14",
     "Sep 21",
     "Sep 28",
     "Oct 5",
     "Oct 12",
     "Oct 19",
-    "Oct 26"
+    "Oct 26",
+    "Nov 2"
   ],
   "repos": [
     {
       "repo": "dotfiles",
       "weeks": [
-        49,
         22,
         9,
         8,
         0,
         26,
         3,
-        11
+        16,
+        4
       ],
-      "total": 128
-    },
-    {
-      "repo": "lindblad",
-      "weeks": [
-        2,
-        2,
-        5,
-        45,
-        2,
-        5,
-        0,
-        0
-      ],
-      "total": 61
+      "total": 88
     },
     {
       "repo": "kernkraft",
@@ -45,11 +31,25 @@
         0,
         0,
         0,
-        0,
         1,
         19,
         36,
-        3
+        9,
+        1
+      ],
+      "total": 66
+    },
+    {
+      "repo": "lindblad",
+      "weeks": [
+        2,
+        5,
+        45,
+        2,
+        5,
+        0,
+        0,
+        0
       ],
       "total": 59
     },
@@ -60,61 +60,33 @@
         0,
         0,
         0,
-        0,
         1,
         14,
-        4
+        32,
+        6
       ],
-      "total": 19
+      "total": 53
     },
     {
       "repo": "kern",
       "weeks": [
-        16,
         0,
         0,
         0,
         0,
         0,
         0,
-        0
+        4,
+        18
       ],
-      "total": 16
+      "total": 22
     },
     {
       "repo": "lindblad-site",
       "weeks": [
-        3,
         2,
         4,
         6,
-        0,
-        0,
-        0,
-        0
-      ],
-      "total": 15
-    },
-    {
-      "repo": "realworld",
-      "weeks": [
-        7,
-        7,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "total": 14
-    },
-    {
-      "repo": "Terramax",
-      "weeks": [
-        10,
-        0,
-        2,
         0,
         0,
         0,
@@ -126,10 +98,10 @@
     {
       "repo": "FLOP",
       "weeks": [
-        0,
         6,
         0,
         4,
+        0,
         0,
         0,
         0,
@@ -138,18 +110,46 @@
       "total": 10
     },
     {
+      "repo": "realworld",
+      "weeks": [
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "total": 7
+    },
+    {
       "repo": "verycareful",
       "weeks": [
-        4,
         0,
         0,
         0,
         0,
         0,
         1,
-        2
+        2,
+        0
       ],
-      "total": 7
+      "total": 3
+    },
+    {
+      "repo": "Terramax",
+      "weeks": [
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "total": 2
     }
   ]
 }
