@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-02T15:01:56.242Z",
+  "generated": "2026-11-04T18:12:20.923Z",
   "weeks": [
     "Sep 14",
     "Sep 21",
@@ -21,9 +21,9 @@
         26,
         3,
         16,
-        4
+        7
       ],
-      "total": 88
+      "total": 91
     },
     {
       "repo": "kernkraft",
@@ -35,9 +35,23 @@
         19,
         36,
         9,
-        1
+        11
       ],
-      "total": 66
+      "total": 76
+    },
+    {
+      "repo": "kern-desktop",
+      "weeks": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        14,
+        32,
+        25
+      ],
+      "total": 72
     },
     {
       "repo": "lindblad",
@@ -54,20 +68,6 @@
       "total": 59
     },
     {
-      "repo": "kern-desktop",
-      "weeks": [
-        0,
-        0,
-        0,
-        0,
-        1,
-        14,
-        32,
-        6
-      ],
-      "total": 53
-    },
-    {
       "repo": "kern",
       "weeks": [
         0,
@@ -77,9 +77,9 @@
         0,
         0,
         4,
-        18
+        22
       ],
-      "total": 22
+      "total": 26
     },
     {
       "repo": "lindblad-site",
@@ -105,9 +105,9 @@
         0,
         0,
         0,
-        0
+        1
       ],
-      "total": 10
+      "total": 11
     },
     {
       "repo": "realworld",
@@ -150,6 +150,20 @@
         0
       ],
       "total": 2
+    },
+    {
+      "repo": "OpenLift",
+      "weeks": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "total": 1
     }
   ]
 }
